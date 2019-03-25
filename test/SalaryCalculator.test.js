@@ -3,12 +3,15 @@ const expect = require('chai').expect;
 const should = require('chai').should();
 
 import Employee from '../src/Employee.js';
-import SalaryCalculator from '../src/Util/SalaryCalculator';
+import SalaryTicket from '../src/SalaryTicket.js';
 
 describe('The basic functions of Salary Calculator', ()=>{
-    let Carl = new Employee('Carl','fixed');;
+    let fixedEmployee = new Employee('Carl','fixed');
 
     it('generate a salary ticket of 100$ for fixed employeer', ()=>{
-        expect(SalaryCalculator.calculate(Carl)).equal(100);
+        let salaryTicket = new SalaryTicket(fixedEmployee)
+        expect(salaryTicket.salary).equal(100);
     })
+
+
 })
