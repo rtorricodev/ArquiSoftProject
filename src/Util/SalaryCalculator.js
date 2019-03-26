@@ -3,6 +3,8 @@ export default  class SalaryCalculator{
         switch(employee.type){
             case 'fixed':
                 return 100;
+            default:
+                 return 0;
         }
     }
 
