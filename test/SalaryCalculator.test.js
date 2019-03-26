@@ -19,4 +19,9 @@ describe('The basic functions of Salary Calculator', ()=>{
         expect(salaryTicket.salary).equal(100);
     })
 
+    it('return false if the mount is incorrect for fixedEmployee', ()=>{
+        let salaryTicket = new SalaryTicket(fixedEmployee)
+        expect(salaryTicket.salary).not.equal(150);
+    })
+
 })
