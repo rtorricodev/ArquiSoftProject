@@ -10,22 +10,6 @@ export  default class Employee {
         this.fixedSalary = fixedSalary;
     }
 
-    setType(type){
-        this.type = type;
-    }
-
-    setTimesheet(timesheet){
-        this.timesheet = timesheet;
-    }
-
-    setSalesheet(salesheet){
-        this.salesheet = salesheet;
-    }
-
-    setFixedSalary(fixedSalary){
-        this.fixedSalary = fixedSalary;
-    }
-
     calculateSalary(){
         this.ComisionSalary = ComisionEmployeeSalary.calculate(this);
         this.PartialTimeSalary = ParcialTimeSalary.calculate(this);

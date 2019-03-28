@@ -34,9 +34,9 @@ describe('The basic functions of Salary Calculator', ()=>{
     it('generate a salary ticket for Carlos that was a fixed employeer and now is a partial time employeer', ()=>{
         let Carlos = new Employee('Carlos','fixed',2000);
         let CarlosTimesheet = new Timesheet(7,180);
-        Carlos.setType('partialtime');
-        Carlos.setTimesheet(CarlosTimesheet);
-        Carlos.setFixedSalary(0);
+        Carlos.type = 'partialtime';
+        Carlos.timesheet = CarlosTimesheet;
+        Carlos.fixedSalary = 0 ;
         Carlos.calculateSalary();
         let CarlosSalaryTicket = new SalaryTicket(Carlos);
         expect(CarlosSalaryTicket.salary).equal(1260);
@@ -45,8 +45,8 @@ describe('The basic functions of Salary Calculator', ()=>{
     it('generate a salary ticket for Carlos that was a fixed employeer and now is a comision employeer', ()=>{
         let Carlos = new Employee('Carlos','fixed',2000);
         let CarlosSalesSheet = new SalesSheet(2,200);
-        Carlos.setType('comision');
-        Carlos.setSalesheet(CarlosSalesSheet);
+        Carlos.type = 'comision';
+        Carlos.salesheet = CarlosSalesSheet;
         Carlos.calculateSalary();
         let CarlosSalaryTicket = new SalaryTicket(Carlos);
         expect(CarlosSalaryTicket.salary).equal(2400);
