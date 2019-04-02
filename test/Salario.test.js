@@ -8,14 +8,10 @@ import HojaDeTiempo from '../src/Hojas/hojaDeTiempo.js';
 import HojaDeVenta from '../src/Hojas/hojaDeVenta.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
-    
-    let Carlos;
 
-    beforeEach(()=>{
-       Carlos = new Empleado('Carlos');
-    })
 
     it('Generar boleta de salario para Carlos que es empleado fijo con 2000$ de salario', () => {
+        let Carlos = new Empleado('Carlos');
         Carlos.esEmpleadoFijo(2000);
         let BoletaDeCarlos = new Boleta(Carlos);
         expect(BoletaDeCarlos.salario).equal(2000);
@@ -38,6 +34,8 @@ describe('Funciones basicas de la calculadora de salario', () => {
     })
 
     it('Generar boleta de salario para Carlos que era un empleado fijo y ahora es por hora', () => {
+        let Carlos = new Empleado('Carlos');
+        Carlos.esEmpleadoFijo(2000);
         let HojaDeTiempoDeCarlos = new HojaDeTiempo(7, 180);
         Carlos.esEmpleadoPorHora(HojaDeTiempoDeCarlos);
         let BoletaDeCarlos = new Boleta(Carlos);
@@ -45,6 +43,8 @@ describe('Funciones basicas de la calculadora de salario', () => {
     })
 
     it('Generar boleta de salario para Carlos que era un empleado fijo y ahora es por comision', () => {
+        let Carlos = new Empleado('Carlos');
+        Carlos.esEmpleadoFijo(2000);
         let HojaDeVentasDeCarlos = new HojaDeVenta(2, 200);
         Carlos.esEmpleadoPorComision(HojaDeVentasDeCarlos,2000);
         let BoletaDeCarlos = new Boleta(Carlos);
