@@ -1,5 +1,5 @@
 export default class CalculadoraPorHoras {
-    static calcular(empleado) {
+    static calcularMonto(empleado) {
         return (empleado.hojaDeTiempo.tarifa * 
                 empleado.hojaDeTiempo.horasTotalesTrabajadas);
     }

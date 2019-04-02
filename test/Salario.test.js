@@ -1,6 +1,4 @@
-const assert = require('assert');
 const expect = require('chai').expect;
-const should = require('chai').should();
 
 import Empleado from '../src/Empleado.js';
 import Boleta from '../src/Boleta.js';

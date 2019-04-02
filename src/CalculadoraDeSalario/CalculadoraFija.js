@@ -1,7 +1,7 @@
 export default class CalculadoraFija{
-    static calcular(empleado){
+    static calcularMonto(empleado){
         return empleado.salarioFijo;
     }
 
-    
+
 }

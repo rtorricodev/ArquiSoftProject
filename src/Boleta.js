@@ -20,7 +20,7 @@ export default class Boleta {
     }
 
     actualizarSalario(){
-        return this.crearCalculadoraDeSalario().calcular(this.empleado);
+        return this.crearCalculadoraDeSalario().calcularMonto(this.empleado);
     }
 
 
