@@ -1,7 +1,27 @@
+import CalculadoraPorComision from './CalculadoraDeSalario/CalculadoraPorComision.js';
+import CalculadoraPorHoras from './CalculadoraDeSalario/CalculadoraPorHoras.js';
+import CalculadoraFija from './CalculadoraDeSalario/CalculadoraFija.js';
+
 export default class Boleta {
     constructor(empleado) {
-        this.nombreDelEmpleado = empleado.nombre;
-        this.tipoDeEmpleado    = empleado.tipo;
-        this.salario           = empleado.salario;
+        this.empleado = empleado;
+        this.salario  = this.actualizarSalario();
     }
+
+    crearCalculadoraDeSalario(){
+        switch(this.empleado.tipo){
+            case 'fijo': 
+                return CalculadoraFija;
+            case 'comision': 
+                return CalculadoraPorComision;
+            case 'porHora': 
+                return CalculadoraPorHoras;
+        }
+    }
+
+    actualizarSalario(){
+        return this.crearCalculadoraDeSalario().calcular(this.empleado);
+    }
+
+
 }
