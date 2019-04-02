@@ -34,24 +34,24 @@ export default class Empleado {
 
 
     cambiarAEmpleadofijo(salarioFijo){
-        this.tipo = 'fijo';
-        this.hojaDeVenta = HojaDeVenta.CrearHojaVacia();
+        this.tipo         = 'fijo';
+        this.hojaDeVenta  = HojaDeVenta.CrearHojaVacia();
         this.hojaDeTiempo = hojaDeTiempo.CrearHojaVacia();
-        this.salarioFijo = salarioFijo;
+        this.salarioFijo  = salarioFijo;
         this.actualizarSalario();
     }
 
     cambiarAEmpleadoPorHora(hojaDeTiempo){
-        this.tipo = 'porHora';
-        this.salarioFijo = 0;
-        this.hojaDeVenta = HojaDeVenta.CrearHojaVacia();
+        this.tipo         = 'porHora';
+        this.salarioFijo  = 0;
+        this.hojaDeVenta  = HojaDeVenta.CrearHojaVacia();
         this.hojaDeTiempo = hojaDeTiempo;
         this.actualizarSalario();
     }
 
     cambiarAEmpleadoPorComision(hojaDeVenta){   
-        this.tipo = 'comision';
-        this.hojaDeVenta = hojaDeVenta;
+        this.tipo         = 'comision';
+        this.hojaDeVenta  = hojaDeVenta;
         this.hojaDeTiempo = HojaDeTiempo.CrearHojaVacia();
         this.actualizarSalario();
     }
