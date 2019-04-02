@@ -19,7 +19,6 @@ describe('Funciones basicas de la calculadora de salario', () => {
     it('Generar boleta de salario para Roxana que es un empleado por hora', () => {
         let HojaDeTiempoDeRoxana = new HojaDeTiempo(7, 180);
         let Roxana = new Empleado('Roxana', 'porHora', 0, HojaDeTiempoDeRoxana);
-        Roxana.calcularSalario();
         let BoletaDeRoxana = new Boleta(Roxana);
         expect(BoletaDeRoxana.salario).equal(1260);
     })
@@ -27,19 +26,21 @@ describe('Funciones basicas de la calculadora de salario', () => {
     it('Generar boleta de salario para Juan que es un empleado por comision', () => {
         let HojaDeVentaDeJuan = new HojaDeVenta(2, 200);
         let Juan = new Empleado('Juan', 'comision', 2000, null, HojaDeVentaDeJuan);
-        Juan.calcularSalario();
         let BoletaDeJuan = new Boleta(Juan);
         expect(BoletaDeJuan.salario).equal(2400);
     })
 
     it('Generar boleta de salario para Carlos que era un empleado fijo y ahora es por hora', () => {
         let Carlos = new Empleado('Carlos', 'fijo', 2000);
-        let HojaDeTiempoDeCarlos = new HojaDeTiempo(7, 180);
+
         Carlos.tipo = 'porHora';
-        Carlos.hojaDeTiempo = HojaDeTiempoDeCarlos;
         Carlos.salarioFijo = 0;
-        Carlos.calcularSalario();
+        let HojaDeTiempoDeCarlos = new HojaDeTiempo(7, 180);
+        Carlos.hojaDeTiempo = HojaDeTiempoDeCarlos;
+        
+        Carlos.actualizarSalario();
         let BoletaDeCarlos = new Boleta(Carlos);
+        
         expect(BoletaDeCarlos.salario).equal(1260);
     })
 
@@ -48,7 +49,7 @@ describe('Funciones basicas de la calculadora de salario', () => {
         let HojaDeVentasDeCarlos = new HojaDeVenta(2, 200);
         Carlos.tipo = 'comision';
         Carlos.hojaDeVenta = HojaDeVentasDeCarlos;
-        Carlos.calcularSalario();
+        Carlos.actualizarSalario();
         let BoletaDeCarlos = new Boleta(Carlos);
         expect(BoletaDeCarlos.salario).equal(2400);
     })
