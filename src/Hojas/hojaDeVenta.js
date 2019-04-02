@@ -3,4 +3,8 @@ export default class HojaDeVenta {
         this.comision = comision;
         this.ventasTotales = ventasTotales;
     }
+
+    static CrearHojaVacia(){
+        return new HojaDeVenta(0,0);
+    }
 }

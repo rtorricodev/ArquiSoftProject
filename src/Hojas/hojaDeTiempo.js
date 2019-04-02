@@ -3,4 +3,8 @@ export default class HojaDeTiempo {
         this.tarifa = tarifa;
         this.horasTotalesTrabajadas = horasTotalesTrabajadas;
     }
+
+    static CrearHojaVacia(){
+        return new HojaDeTiempo(0,0);
+    }
 }
