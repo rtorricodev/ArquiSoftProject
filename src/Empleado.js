@@ -9,13 +9,13 @@ export default class Empleado {
     }
 
     esEmpleadoPorHora(RegistroDeTiempo){
-        this.tipo         = 'porHora';
+        this.tipo             = 'porHora';
         this.RegistroDeTiempo = RegistroDeTiempo;
     }
 
     esEmpleadoPorComision(RegistroDeVenta,salarioFijo){   
-        this.tipo        = 'comision';
-        this.salarioFijo = salarioFijo;
+        this.tipo            = 'comision';
+        this.salarioFijo     = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
     }
 
