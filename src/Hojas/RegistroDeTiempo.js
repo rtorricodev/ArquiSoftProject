@@ -12,4 +12,6 @@ export default class RegistroDeTiempo {
     retornarNumeroDeTarjetas(){
         return this.listaDeTarjetas.length;
     }
+
+
 }
