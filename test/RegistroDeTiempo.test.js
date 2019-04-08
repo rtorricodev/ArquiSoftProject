@@ -19,7 +19,7 @@ describe('Funciones básicas del registro de tiempo',()=>{
         let tarjeta1 = new TarjetaDeTiempo(horaDeEntrada, horaDeSalida);
 
         nuevoRegistro.agregarTarjetaARegistro(tarjeta1);
-
-        expect(nuevoRegistro.horasTotalesTrabajadas).equal(tarjeta1.calcurarDuracion());
+      
+        expect(nuevoRegistro.retornarHorasTotalesCalculadas()).equal(tarjeta1.calcularDuracion());
     })
 })
