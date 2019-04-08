@@ -1,4 +1,4 @@
-export default class HojaDeTiempo {
+export default class RegistroDeTiempo {
     constructor(tarifa, horasTotalesTrabajadas) {
         this.tarifa = tarifa;
         this.horasTotalesTrabajadas = horasTotalesTrabajadas;

@@ -8,15 +8,15 @@ export default class Empleado {
         this.salarioFijo  = salarioFijo;
     }
 
-    esEmpleadoPorHora(hojaDeTiempo){
+    esEmpleadoPorHora(RegistroDeTiempo){
         this.tipo         = 'porHora';
-        this.hojaDeTiempo = hojaDeTiempo;
+        this.RegistroDeTiempo = RegistroDeTiempo;
     }
 
-    esEmpleadoPorComision(hojaDeVenta,salarioFijo){   
+    esEmpleadoPorComision(RegistroDeVenta,salarioFijo){   
         this.tipo        = 'comision';
         this.salarioFijo = salarioFijo;
-        this.hojaDeVenta = hojaDeVenta;
+        this.RegistroDeVenta = RegistroDeVenta;
     }
 
 }
