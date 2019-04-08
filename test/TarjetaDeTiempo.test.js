@@ -18,7 +18,7 @@ describe('Funciones básica de las tarjetas de registro de tiempo', () => {
         horaDeSalida.setMinutes(0);
 
         let tarjeta1 = new TarjetaDeTiempo(horaDeEntrada,horaDeSalida);
-        registroDeCarlos.agregarTarjeta(tarjeta1);
-        expect(registroDeCarlos.numeroDeTarjetas()).equal(1);
+        registroDeCarlos.agregarTarjetaARegistro(tarjeta1);
+        expect(registroDeCarlos.retornarNumeroDeTarjetas()).equal(1);
     })
 })

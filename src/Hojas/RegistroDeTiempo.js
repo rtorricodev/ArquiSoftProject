@@ -5,11 +5,11 @@ export default class RegistroDeTiempo {
         this.listaDeTarjetas = [];
     }
 
-    agregarTarjeta(tarjeta){
+    agregarTarjetaARegistro(tarjeta){
         this.listaDeTarjetas.push(tarjeta);
     }
 
-    numeroDeTarjetas(){
+    retornarNumeroDeTarjetas(){
         return this.listaDeTarjetas.length;
     }
 }
