@@ -44,13 +44,13 @@ describe('Funciones básica de las tarjetas de registro de tiempo', () => {
     it('Debería poder asignar una tarjeta a un registro de tiempo', ()=>{
         let numeroActualDeTarjetas = nuevoRegistro.retornarNumeroDeTarjetas();
         nuevoRegistro.agregarTarjetaARegistro(tarjeta1);
-        expect(numeroActualDeTarjetas).equal(numeroActualDeTarjetas + 1);
+        expect(nuevoRegistro.retornarNumeroDeTarjetas()).equal(numeroActualDeTarjetas + 1);
     })
 
     it('Debería poder asignarse varias tarjetas a un registro de tiempo', ()=>{
-       listaDeTarjetas = [tarjeta1,tarjeta2];
+       let listaDeTarjetas = [tarjeta1,tarjeta2];
        let numeroActualDeTarjetas = nuevoRegistro.retornarNumeroDeTarjetas();
        nuevoRegistro.agregarListaDeTarjetas(listaDeTarjetas);
-       expect(nnumeroActualDeTarjetas).equal(numeroActualDeTarjetas + listaDeTarjetas.length)
+       expect(nuevoRegistro.retornarNumeroDeTarjetas()).equal(numeroActualDeTarjetas + listaDeTarjetas.length)
     })
 })

@@ -13,5 +13,10 @@ export default class RegistroDeTiempo {
         return this.listaDeTarjetas.length;
     }
 
+    agregarListaDeTarjetas(listaDeTarjetasPorAgregar){
+        listaDeTarjetasPorAgregar.forEach(tarjeta => {
+            this.listaDeTarjetas.push(tarjeta);
+        });
+    }
 
 }
