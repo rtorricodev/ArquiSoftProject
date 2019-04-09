@@ -22,7 +22,7 @@ export default class CalculadoraFechaPorComision {
         return empleado.contadorDeViernes === 0 || empleado.contadorDeViernes === 2
     }
 
-    obtenerDiaEnBaseALaFecha(fecha){
+    obtenerDiaEnBaseALaFecha(fecha){  //Esta funcion se repite en dos archivos
         return this.diasSemana[fecha.getDay()];
     }
 
@@ -35,7 +35,7 @@ export default class CalculadoraFechaPorComision {
         }
     }
 
-    esViernes(dia){
+    esViernes(dia){  //Esta funcion se repite en dos archivos
         return dia === "Viernes"
     }
 }

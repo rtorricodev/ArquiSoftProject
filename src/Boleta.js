@@ -28,11 +28,11 @@ export default class Boleta {
     crearCalculadoraDeFechaPago(){
         switch(this.empleado.tipo){
             case 'fijo': 
-                return CalculadoraFechaFija;
+                return new CalculadoraFechaFija;
             case 'comision': 
                 return new CalculadoraFechaPorComision;
             case 'porHora': 
-                return CalculadoraFechaPorHoras;
+                return new CalculadoraFechaPorHoras;
         }
     }
 
