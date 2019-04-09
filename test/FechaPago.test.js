@@ -2,6 +2,8 @@ const expect = require('chai').expect;
 
 import Empleado from '../src/Empleado.js';
 import Boleta from '../src/Boleta.js';
+import HojaDeTiempo from '../src/Hojas/hojaDeTiempo.js';
+import HojaDeVenta from '../src/Hojas/hojaDeVenta.js';
 
 describe('Funciones basicas de la calculadora de fecha de pago', () => {
 
@@ -11,5 +13,14 @@ describe('Funciones basicas de la calculadora de fecha de pago', () => {
         let BoletaDeCarlos = new Boleta(Carlos);
         expect(BoletaDeCarlos.estaDisponibleParaPagar).equal(false);
     })
+
+    it('Verificar si Roxana, un empleado por hora, esta disponible para recibir su pago tomando en cuenta la fecha actual', () => {
+        let HojaDeTiempoDeRoxana = new HojaDeTiempo(7, 180);
+        let Roxana = new Empleado('Roxana');
+        Roxana.esEmpleadoPorHora(HojaDeTiempoDeRoxana);
+        let BoletaDeRoxana = new Boleta(Roxana);
+        expect(BoletaDeRoxana.estaDisponibleParaPagar).equal(false);
+    })
+
 
 })
