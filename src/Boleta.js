@@ -30,7 +30,7 @@ export default class Boleta {
             case 'fijo': 
                 return CalculadoraFechaFija;
             case 'comision': 
-                return CalculadoraFechaPorComision;
+                return new CalculadoraFechaPorComision;
             case 'porHora': 
                 return CalculadoraFechaPorHoras;
         }

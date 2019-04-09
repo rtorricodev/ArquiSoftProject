@@ -1,16 +1,41 @@
 export default class CalculadoraFechaPorComision {
-    static estaDisponibleParaPagar(fecha, empleado){
-        let estaDisponible = false;
-        let diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-        let diaEnLetras = diasSemana[fecha.getDay()];
-        if(diaEnLetras === "Viernes"){
-            if(empleado.contadorDeViernes === 0 || empleado.contadorDeViernes === 2)
-                estaDisponible = true;
+
+    constructor(){
+        this.estaDisponible = false;
+        this.diasSemana = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+    }
+
+
+    estaDisponibleParaPagar(fecha, empleado){
+        let  dia = this.obtenerDiaEnBaseALaFecha(fecha);
+        if(this.esViernes(dia)){
+            if(pasaronDosSemanas()){
+                this.this.estaDisponible = true;
+            }
         }   
-        if(empleado.contadorDeViernes == 3)
+        this.restaurarContadorDeEmpleado(empleado);
+        return this.estaDisponible;
+    }
+
+
+    pasaronDosSemanas(empleado){
+        return empleado.contadorDeViernes === 0 || empleado.contadorDeViernes === 2
+    }
+
+    obtenerDiaEnBaseALaFecha(fecha){
+        return this.diasSemana[fecha.getDay()];
+    }
+
+    restaurarContadorDeEmpleado(empleado){
+        if(empleado.contadorDeViernes == 3){
             empleado.contadorDeViernes == 0;
-        else
+        }
+        else{
             empleado.contadorDeViernes += 1;
-        return estaDisponible;
+        }
+    }
+
+    esViernes(dia){
+        return dia === "Viernes"
     }
 }
