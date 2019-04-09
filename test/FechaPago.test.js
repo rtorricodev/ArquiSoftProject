@@ -22,5 +22,12 @@ describe('Funciones basicas de la calculadora de fecha de pago', () => {
         expect(BoletaDeRoxana.estaDisponibleParaPagar).equal(false);
     })
 
+    it('Verificar si Juan, un empleado por comision, esta disponible para recibir su pago tomando en cuenta la fecha actual', () => {
+        let HojaDeVentaDeJuan = new HojaDeVenta(2, 200);
+        let Juan = new Empleado('Juan');
+        Juan.esEmpleadoPorComision(HojaDeVentaDeJuan,2000);
+        let BoletaDeJuan = new Boleta(Juan);
+        expect(BoletaDeJuan.estaDisponibleParaPagar).equal(false);
+    })
 
 })

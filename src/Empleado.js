@@ -1,6 +1,7 @@
 export default class Empleado {
     constructor(nombre) {
         this.nombre = nombre;
+        this.contadorDeViernes = 0;
     }
 
     esEmpleadoFijo(salarioFijo){

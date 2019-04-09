@@ -41,7 +41,7 @@ export default class Boleta {
     }
 
     verificarSiEstaDisponibleParaPagar(){
-        return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(this.fecha);
+        return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(this.fecha, this.empleado);
     }
 
 
