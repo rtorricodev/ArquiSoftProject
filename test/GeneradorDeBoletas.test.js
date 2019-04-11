@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
-import GeneradorDeBoletas from '../src/GeneradorDeBoletas.js';
+import Empleado from '../src/Clases/Empleado.js';
+import GeneradorDeBoletas from '../src/Clases/GeneradorDeBoletas.js';
 
 describe('Deberia generar boletas para cada empleado', () => {
 

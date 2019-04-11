@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
-import Boleta from '../src/Boleta.js';
-import RegistroDeTiempo from '../src/Hojas/RegistroDeTiempo.js';
-import RegistroDeVenta from '../src/Hojas/RegistroDeVenta.js';
+import Empleado from '../src/Clases/Empleado.js';
+import Boleta from '../src/Clases/Boleta.js';
+import RegistroDeTiempo from '../src/Clases/RegistroDeTiempo.js';
+import RegistroDeVenta from '../src/Clases/RegistroDeVenta.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
 
