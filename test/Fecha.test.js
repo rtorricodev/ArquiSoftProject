@@ -13,4 +13,9 @@ describe('Funciones basicas para clase fecha', () => {
         expect(fecha.retornarFechaActual()).equal(dia + '/' + mes + '/' + anho);
     })
 
+    it('Verificar si se crea fecha deseada 17/4/2019', () => {
+        let fecha = new Fecha(17, 4, 2019);
+        expect(fecha.fechaFormateada).equal('17/4/2019');
+    })
+
 })

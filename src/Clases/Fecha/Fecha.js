@@ -1,5 +1,8 @@
 export default class Fecha {
-    constructor() {}
+
+    constructor(dia, mes, anho) {
+        this.fechaFormateada = dia + '/' + mes + '/' + anho;
+    }
 
     retornarFechaActual() {
         let hoy = new Date();
@@ -9,4 +12,5 @@ export default class Fecha {
         let FechaDeHoy = dia + '/' + mes + '/' + anho;
         return FechaDeHoy;
     }
+
 }
