@@ -8,10 +8,13 @@ export default class GeneradorDeBoletas {
     generarBoletas() {
         let boletasGeneradas = [];
         this.listaDeEmpleados.forEach(empleado => {
+            /* borrar despues de arreglar fecha*/
             let boleta = new Boleta(empleado);
-            // if (boleta.estaDisponibleParaPagar) {
-            //     boletasGeneradas.push(empleado.nombre + ' fecha: ' + boleta.fecha + ' monto: ' + boleta.salario);
-            // }
+            //if (empleado.estaDisponibleParaPagar) {
+            //    let boleta = new Boleta(empleado);
+            //    boletasGeneradas.push(empleado.nombre + ' fecha: ' + boleta.fecha + ' monto: ' + boleta.salario);
+            //}
+            /* borrar despues de arreglar fecha*/
             boletasGeneradas.push(empleado.nombre + ' monto: ' + boleta.salario);
         });
         return boletasGeneradas;
