@@ -42,6 +42,3 @@ let Empledos = new Mongo('mongodb://localhost/27017','ArquiSoft','Empleados');
 
 Empledos.ObtenerListaDocumentosDeUnaColeccion((lista)=>console.log(lista));
 
-
-
-
