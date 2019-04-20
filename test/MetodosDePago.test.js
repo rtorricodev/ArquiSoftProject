@@ -5,16 +5,19 @@ import { beforeEach } from 'mocha';
 
 describe('Funciones basicas del metodo de pago', () => {
 
+    let empleado;
+    beforeEach(() => {
+        empleado = new Empleado('Carlos');
+    });
+
     it('Deberia crear un empleado con el metodo de pago por cheque', () => {
-        let Carlos = new Empleado('Carlos');
-        Carlos.crearMetodoDePago('Cheque');
-        expect(Carlos.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
+        empleado.crearMetodoDePago('Cheque');
+        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
     })
 
     it('Deberia crear un empleado con el metodo de pago en efectivo', () => {
-        let Pedro = new Empleado('Carlos');
-        Pedro.crearMetodoDePago('Efectivo');
-        expect(Pedro.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado en efectivo por RRHH');
+        empleado.crearMetodoDePago('Efectivo');
+        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado en efectivo por RRHH');
     })
 
 })
