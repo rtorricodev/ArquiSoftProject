@@ -7,7 +7,7 @@ import RegistroDeVenta from '../src/Clases/RegistroDeVenta.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
 
-    
+
 
     it('Deberia generar boleta de salario para Carlos que es empleado fijo con 2000$ de salario', () => {
         let Carlos = new Empleado('Carlos');
@@ -27,7 +27,7 @@ describe('Funciones basicas de la calculadora de salario', () => {
     it('Deberia generar boleta de salario para Juan que es un empleado por comision', () => {
         let RegistroDeVentaDeJuan = new RegistroDeVenta(2, 200);
         let Juan = new Empleado('Juan');
-        Juan.esEmpleadoPorComision(RegistroDeVentaDeJuan,2000);
+        Juan.esEmpleadoPorComision(RegistroDeVentaDeJuan, 2000);
         let BoletaDeJuan = new Boleta(Juan);
         expect(BoletaDeJuan.salario).equal(2400);
     })
@@ -45,7 +45,7 @@ describe('Funciones basicas de la calculadora de salario', () => {
         let Carlos = new Empleado('Carlos');
         Carlos.esEmpleadoFijo(2000);
         let RegistroDeVentasDeCarlos = new RegistroDeVenta(2, 200);
-        Carlos.esEmpleadoPorComision(RegistroDeVentasDeCarlos,2000);
+        Carlos.esEmpleadoPorComision(RegistroDeVentasDeCarlos, 2000);
         let BoletaDeCarlos = new Boleta(Carlos);
         expect(BoletaDeCarlos.salario).equal(2400);
     })

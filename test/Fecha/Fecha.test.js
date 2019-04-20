@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-import Fecha from '../src/Clases/Fecha/Fecha.js';
+import Fecha from '../../src/Clases/Fecha/Fecha.js';
 
 describe('Funciones basicas para clase fecha', () => {
 
