@@ -20,4 +20,9 @@ describe('Funciones basicas del metodo de pago', () => {
         expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado en efectivo por RRHH');
     })
 
+    it('Deberia crear un empleado con el metodo de pago por deposito bancario', () => {
+        empleado.crearMetodoDePago('Deposito');
+        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por deposito bancario');
+    })
+
 })

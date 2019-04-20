@@ -3,6 +3,7 @@ import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaP
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
 import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
+import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
 
 export default class Empleado {
     constructor(nombre) {
@@ -54,6 +55,9 @@ export default class Empleado {
                 break;
             case 'Efectivo':
                 this.metodoDePago = new pagoEnEfectivo();
+                break;
+            case 'Deposito':
+                this.metodoDePago = new pagoPorDepositoBancario();
                 break;
         }
     }
