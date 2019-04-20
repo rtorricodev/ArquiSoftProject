@@ -13,20 +13,17 @@ export default class Empleado {
     esEmpleadoFijo(salarioFijo){
         this.tipo         = 'fijo';
         this.salarioFijo  = salarioFijo;
-//        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
     }
 
     esEmpleadoPorHora(RegistroDeTiempo){
         this.tipo             = 'porHora'; 
         this.RegistroDeTiempo = RegistroDeTiempo;
-//        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
     }
 
     esEmpleadoPorComision(RegistroDeVenta,salarioFijo){   
         this.tipo            = 'comision';
         this.salarioFijo     = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
-//        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
     }
 
     crearCalculadoraDeFechaPago(){

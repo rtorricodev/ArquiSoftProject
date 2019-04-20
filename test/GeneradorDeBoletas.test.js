@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 
 import Empleado from '../src/Clases/Empleado.js';
+import Fecha from '../src/Clases/Fecha/Fecha.js';
 import GeneradorDeBoletas from '../src/Clases/GeneradorDeBoletas.js';
 
 describe('Deberia generar boletas para cada empleado', () => {
@@ -13,8 +14,10 @@ describe('Deberia generar boletas para cada empleado', () => {
         Juan.esEmpleadoFijo(3000);
         generadorDeBoletas.listaDeEmpleados.push(Carlos);
         generadorDeBoletas.listaDeEmpleados.push(Juan);
-        expect(generadorDeBoletas.generarBoletas()[0]).equal('Carlos monto: 2000');
-        expect(generadorDeBoletas.generarBoletas()[1]).equal('Juan monto: 3000');
+        let fecha = new Fecha();
+        fecha.formatearFechaDDMMAA(28,2,2019);
+        expect(generadorDeBoletas.generarBoletas(fecha)[0]).equal('Carlos monto: 2000');
+        expect(generadorDeBoletas.generarBoletas(fecha)[1]).equal('Juan monto: 3000');
     })
 
 })
