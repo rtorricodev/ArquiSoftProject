@@ -2,14 +2,14 @@ import CalculadoraFechaPorComision from './CalculadoraDeFechaPago/CalculadoraFec
 import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaPorHoras.js';
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
+import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
 
 export default class Empleado {
     constructor(nombre) {
         this.nombre = nombre;
         this.contadorDeViernes = 0;
         this.fecha = new Date();
-        this.tipoDePago = 'efectivo'; //Por defecto para evitar errores
-        this.metodoDePago = this.crearMetodoDePago();
+        this.metodoDePago;
         //TODO:añadir apellido,celular,correo,Facebook,numero de cuenta
     }
 
@@ -47,10 +47,14 @@ export default class Empleado {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(this.fecha, this);
     }
 
-    crearMetodoDePago() {
-        switch (this.tipoDePago) {
+    crearMetodoDePago(tipo) {
+        switch (tipo) {
             case 'Cheque':
                 this.metodoDePago = new pagoPorCheque();
+                break;
+            case 'Efectivo':
+                this.metodoDePago = new pagoEnEfectivo();
+                break;
         }
     }
 }
