@@ -5,6 +5,7 @@ import Boleta from '../src/Clases/Boleta.js';
 import RegistroDeTiempo from '../src/Clases/RegistroDeTiempo.js';
 import RegistroDeVenta from '../src/Clases/RegistroDeVenta.js';
 import Fecha from '../src/Clases/Fecha/Fecha.js';
+import TarjetaDeTiempo from '../src/Clases/TarjetaDeTiempo.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
 
@@ -32,6 +33,17 @@ describe('Funciones basicas de la calculadora de salario', () => {
         empleado.esEmpleadoPorHora(RegistroDeTiempoDeCarlos);
         let BoletaDeCarlos = new Boleta(empleado);
         expect(BoletaDeCarlos.salario).equal(1260);
+    })
+
+    it('Deberia generar boleta de salario para Roxana que es un empleado por hora que trabajo 3hrs extras', () => {
+        let diaInicio = new Date("December 17, 1995 03:00:00");
+        let diaFin = new Date("December 17, 1995 13:00:00");
+        let tarjetaDetiempoDeCarlos = new TarjetaDeTiempo(diaInicio,diaFin)
+        let registroDeTiempoDeCarlos = new RegistroDeTiempo(80,0,8);
+        registroDeTiempoDeCarlos.agregarTarjetaARegistro(tarjetaDetiempoDeCarlos);
+        empleado.esEmpleadoPorHora(registroDeTiempoDeCarlos);
+        let BoletaDeCarlos = new Boleta(empleado);
+        expect(BoletaDeCarlos.salario).equal(880);
     })
 
     it('Deberia generar boleta de salario para Juan que es un empleado por comision', () => {
