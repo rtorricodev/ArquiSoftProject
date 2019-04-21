@@ -19,4 +19,9 @@ describe('Funciones basicas de las notificaciones', () => {
         expect(empleado.notificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por correo');
     });
 
+    it('Deberia crear notificacion de correo para un empleado', () => {
+        empleado.anadirNotificacion('Facebook');
+        expect(empleado.notificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por facebook');
+    });
+
 })
