@@ -1,6 +1,8 @@
 export default class CalculadoraPorHoras {
     static calcularMonto(empleado) {
         return (empleado.RegistroDeTiempo.tarifa * 
-                empleado.RegistroDeTiempo.horasTotalesTrabajadasManuales);
+                empleado.RegistroDeTiempo.retornarHorasTotalesCalculadas()) + 
+                ((empleado.RegistroDeTiempo.tarifa * 1.5) *
+                empleado.RegistroDeTiempo.retornarHorasExtrasTotalesCalculadas());
     }
 }

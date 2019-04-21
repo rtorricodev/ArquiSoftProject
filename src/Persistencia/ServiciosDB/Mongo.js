@@ -20,7 +20,7 @@ export default class Mongo{
         coleccion.insertOne(objeto);
     }
 
-    async obtenerTabla(tabla){
+    async listar(tabla){
         let coleccion =  await this.baseDeDatos.collection(tabla);
         let cursor = await coleccion.find({});
         let arreglo = await cursor.toArray();

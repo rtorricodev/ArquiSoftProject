@@ -5,32 +5,30 @@ import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
 import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
 import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
 
+
 export default class Empleado {
     constructor(nombre) {
         this.nombre = nombre;
         this.contadorDeViernes = 0;
-        this.fecha = new Date();
-        this.metodoDePago;
+        this.recibioSuPrimerPago = false;
         //TODO:añadir apellido,celular,correo,Facebook,numero de cuenta
     }
 
-    esEmpleadoFijo(salarioFijo) {
-        this.tipo = 'fijo';
-        this.salarioFijo = salarioFijo;
-        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
+    esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo){
+        this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
+        this.tipo         = 'fijo';
+        this.salarioFijo  = salarioFijo;
     }
 
     esEmpleadoPorHora(RegistroDeTiempo) {
         this.tipo = 'porHora';
         this.RegistroDeTiempo = RegistroDeTiempo;
-        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
     }
 
     esEmpleadoPorComision(RegistroDeVenta, salarioFijo) {
         this.tipo = 'comision';
         this.salarioFijo = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
-        this.estaDisponibleParaPagar = this.verificarSiEstaDisponibleParaPagar();
     }
 
     crearCalculadoraDeFechaPago() {
@@ -44,8 +42,8 @@ export default class Empleado {
         }
     }
 
-    verificarSiEstaDisponibleParaPagar() {
-        return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(this.fecha, this);
+    verificarSiEstaDisponibleParaPagar(fecha){
+        return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
     }
 
     crearMetodoDePago(tipo) {

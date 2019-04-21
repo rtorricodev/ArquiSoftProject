@@ -5,6 +5,6 @@ export default class TarjetaDeTiempo{
     }
 
     calcularDuracion(){
-        return Math.abs(this.horaDeEntrada.getHours() - this.horaDeSalida.getHours());
+        return Math.abs(this.horaDeSalida.getHours() - this.horaDeEntrada.getHours());
     }
 }
