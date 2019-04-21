@@ -1,6 +1,7 @@
 import notificacionPorSMS from './GestorDeNotificaciones/notificacionPorSMS';
 import notificacionPorCorreo from './GestorDeNotificaciones/notificacionPorCorreo.js';
 import notificacionPorFacebook from './GestorDeNotificaciones/notificacionPorFacebook.js';
+import notificacionPorWhatsApp from './GestorDeNotificaciones/notificacionPorWhatsApp.js';
 
 export default class Notificacion {
 
@@ -28,6 +29,9 @@ export default class Notificacion {
                 break;
             case 'Facebook':
                 tipo = new notificacionPorFacebook();
+                break;
+            case 'WhatsApp':
+                tipo = new notificacionPorWhatsApp();
                 break;
         }
         return tipo;
