@@ -4,20 +4,24 @@ import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.
 import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
 import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
 import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
-
+import Notificacion from './Notificacion.js';
 
 export default class Empleado {
-    constructor(nombre) {
+    constructor(nombre, apellido, celular, correo) {
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.correo = correo;
         this.contadorDeViernes = 0;
         this.recibioSuPrimerPago = false;
-        //TODO:añadir apellido,celular,correo,Facebook,numero de cuenta
+        this.notificaciones = [];
+        //TODO:añadir Facebook,numero de cuenta
     }
 
-    esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo){
+    esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo) {
         this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
-        this.tipo         = 'fijo';
-        this.salarioFijo  = salarioFijo;
+        this.tipo = 'fijo';
+        this.salarioFijo = salarioFijo;
     }
 
     esEmpleadoPorHora(RegistroDeTiempo) {
@@ -42,7 +46,7 @@ export default class Empleado {
         }
     }
 
-    verificarSiEstaDisponibleParaPagar(fecha){
+    verificarSiEstaDisponibleParaPagar(fecha) {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
     }
 
@@ -59,4 +63,10 @@ export default class Empleado {
                 break;
         }
     }
+
+    anadirNotificacion(nombre) {
+        let notificacion = new Notificacion(nombre);
+        this.notificaciones.push(notificacion);
+    }
+
 }
