@@ -1,4 +1,5 @@
 import notificacionPorSMS from './GestorDeNotificaciones/notificacionPorSMS';
+import notificacionPorCorreo from './GestorDeNotificaciones/notificacionPorCorreo.js';
 
 export default class Notificacion {
 
@@ -20,6 +21,9 @@ export default class Notificacion {
         switch (nombre) {
             case 'SMS':
                 tipo = new notificacionPorSMS();
+                break;
+            case 'Correo':
+                tipo = new notificacionPorCorreo();
                 break;
         }
         return tipo;
