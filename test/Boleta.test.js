@@ -4,6 +4,7 @@ import Empleado from '../src/Clases/Empleado.js';
 import Boleta from '../src/Clases/Boleta.js';
 import RegistroDeTiempo from '../src/Clases/RegistroDeTiempo.js';
 import RegistroDeVenta from '../src/Clases/RegistroDeVenta.js';
+import Fecha from '../src/Clases/Fecha/Fecha.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
 
@@ -13,9 +14,17 @@ describe('Funciones basicas de la calculadora de salario', () => {
     });
 
     it('Deberia generar boleta de salario para Carlos que es empleado fijo con 2000$ de salario', () => {
-        empleado.esEmpleadoFijo(2000);
+        let fechaInicioDeTrabajo = new Fecha(1, 4, 2019);
+        empleado.esEmpleadoFijo(2000,fechaInicioDeTrabajo);
         let BoletaDeCarlos = new Boleta(empleado);
         expect(BoletaDeCarlos.salario).equal(2000);
+    })
+
+    it('Deberia generar boleta de salario para Carlos que es empleado fijo con 2000$ de salario, pero este entro a mediados del mes', () => {
+        let fechaInicioDeTrabajo = new Fecha(16, 4, 2019);
+        empleado.esEmpleadoFijo(2000,fechaInicioDeTrabajo);
+        let BoletaDeCarlos = new Boleta(empleado);
+        expect(BoletaDeCarlos.salario).equal(1000);
     })
 
     it('Deberia generar boleta de salario para Roxana que es un empleado por hora', () => {

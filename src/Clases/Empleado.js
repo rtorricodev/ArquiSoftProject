@@ -7,10 +7,12 @@ export default class Empleado {
     constructor(nombre) {
         this.nombre = nombre;
         this.contadorDeViernes = 0;
+        this.recibioSuPrimerPago = false;
         //TODO:añadir apellido,celular,correo,Facebook,numero de cuenta
     }
 
-    esEmpleadoFijo(salarioFijo){
+    esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo){
+        this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
         this.tipo         = 'fijo';
         this.salarioFijo  = salarioFijo;
     }

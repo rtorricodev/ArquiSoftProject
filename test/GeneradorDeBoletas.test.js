@@ -8,10 +8,11 @@ describe('Deberia generar boletas para cada empleado', () => {
 
     it('Verificar si Genera la boletas para Carlos y Juan', () => {
         let generadorDeBoletas = new GeneradorDeBoletas();
+        let fechaInicioDeTrabajo = new Fecha(1, 4, 2019);
         let Carlos = new Empleado('Carlos');
-        Carlos.esEmpleadoFijo(2000);
+        Carlos.esEmpleadoFijo(2000, fechaInicioDeTrabajo);
         let Juan = new Empleado('Juan');
-        Juan.esEmpleadoFijo(3000);
+        Juan.esEmpleadoFijo(3000, fechaInicioDeTrabajo);
         generadorDeBoletas.listaDeEmpleados.push(Carlos);
         generadorDeBoletas.listaDeEmpleados.push(Juan);
         let fecha = new Fecha();

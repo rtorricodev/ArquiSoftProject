@@ -1,9 +1,9 @@
 export default class Fecha {
 
-    constructor() {
-        this.dia = 0;
-        this.mes = 0;
-        this.anho = 0;
+    constructor(dia, mes, anho) {
+        this.dia = dia;
+        this.mes = mes;
+        this.anho = anho;
     }
 
     retornarFechaActual() {
