@@ -45,12 +45,12 @@ describe('Funciones básicas del registro de tiempo',()=>{
 
     it('Debe calcular el tiempo total de una tarjeta', ()=>{
         nuevoRegistro.agregarTarjetaARegistro(tarjeta1);
-        expect(nuevoRegistro.retornarHorasTotalesCalculadas()).equal(tarjeta1.calcularDuracion() + nuevoRegistro.horasTotalesTrabajadasManuales - 1);
+        expect(nuevoRegistro.retornarHorasTotalesCalculadas()).equal(tarjeta1.calcularDuracion());
     })
 
     it('Debe calcular el tiempo total de una lista de tarjetas',()=>{
         let listaDeTarjetas = [tarjeta1,tarjeta2];
         nuevoRegistro2.agregarListaDeTarjetas(listaDeTarjetas);
-        expect(nuevoRegistro2.retornarHorasTotalesCalculadas()).equal(tarjeta1.calcularDuracion() + tarjeta2.calcularDuracion() + nuevoRegistro2.horasTotalesTrabajadasManuales - 2);
+        expect(nuevoRegistro2.retornarHorasTotalesCalculadas()).equal(tarjeta1.calcularDuracion() + tarjeta2.calcularDuracion());
     })
 })
