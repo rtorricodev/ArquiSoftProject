@@ -1,6 +1,6 @@
 import Mongo from '../Persistencia/ServiciosDB/Mongo.js';
 
-export default class Persistencia {
+export default class BaseDeDatos {
     constructor(tipo){
         this.tipo = tipo;
         this.BD = this.instanciarBD();
@@ -18,8 +18,8 @@ export default class Persistencia {
         this.BD.guardar(objeto,tabla);
     }
 
-    obtenerTabla(tabla){
-        return this.BD.obtenerTabla(tabla);
+    listar(tabla){
+        return this.BD.listar(tabla);
         
     }
     

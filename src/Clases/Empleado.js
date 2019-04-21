@@ -1,7 +1,10 @@
 import CalculadoraFechaPorComision from './CalculadoraDeFechaPago/CalculadoraFechaPorComision.js';
 import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaPorHoras.js';
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
-import Fecha from './Fecha/Fecha.js';
+import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
+import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
+import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
+
 
 export default class Empleado {
     constructor(nombre) {
@@ -17,24 +20,24 @@ export default class Empleado {
         this.salarioFijo  = salarioFijo;
     }
 
-    esEmpleadoPorHora(RegistroDeTiempo){
-        this.tipo             = 'porHora'; 
+    esEmpleadoPorHora(RegistroDeTiempo) {
+        this.tipo = 'porHora';
         this.RegistroDeTiempo = RegistroDeTiempo;
     }
 
-    esEmpleadoPorComision(RegistroDeVenta,salarioFijo){   
-        this.tipo            = 'comision';
-        this.salarioFijo     = salarioFijo;
+    esEmpleadoPorComision(RegistroDeVenta, salarioFijo) {
+        this.tipo = 'comision';
+        this.salarioFijo = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
     }
 
-    crearCalculadoraDeFechaPago(){
-        switch(this.tipo){
-            case 'fijo': 
+    crearCalculadoraDeFechaPago() {
+        switch (this.tipo) {
+            case 'fijo':
                 return new CalculadoraFechaFija;
-            case 'comision': 
+            case 'comision':
                 return new CalculadoraFechaPorComision;
-            case 'porHora': 
+            case 'porHora':
                 return new CalculadoraFechaPorHoras;
         }
     }
@@ -43,4 +46,17 @@ export default class Empleado {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
     }
 
+    crearMetodoDePago(tipo) {
+        switch (tipo) {
+            case 'Cheque':
+                this.metodoDePago = new pagoPorCheque();
+                break;
+            case 'Efectivo':
+                this.metodoDePago = new pagoEnEfectivo();
+                break;
+            case 'Deposito':
+                this.metodoDePago = new pagoPorDepositoBancario();
+                break;
+        }
+    }
 }
