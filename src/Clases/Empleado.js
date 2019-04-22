@@ -4,7 +4,7 @@ import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.
 import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
 import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
 import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
-import Notificacion from './Notificacion.js';
+import ConfiguracionEmpleado from './ConfiguracionEmpleado.js';
 
 export default class Empleado {
     constructor(nombre, apellido, celular, correo) {
@@ -14,7 +14,7 @@ export default class Empleado {
         this.correo = correo;
         this.contadorDeViernes = 0;
         this.recibioSuPrimerPago = false;
-        this.notificaciones = [];
+        this.configuracionEmpleado = new ConfiguracionEmpleado();
         //TODO:añadir Facebook,numero de cuenta
     }
 
@@ -62,11 +62,6 @@ export default class Empleado {
                 this.metodoDePago = new pagoPorDepositoBancario();
                 break;
         }
-    }
-
-    anadirNotificacion(nombre) {
-        let notificacion = new Notificacion(nombre);
-        this.notificaciones.push(notificacion);
     }
 
 }
