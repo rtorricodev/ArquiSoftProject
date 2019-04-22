@@ -1,20 +1,18 @@
 import CalculadoraFechaPorComision from './CalculadoraDeFechaPago/CalculadoraFechaPorComision.js';
 import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaPorHoras.js';
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
-import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
-import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
-import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
-import ConfiguracionEmpleado from './ConfiguracionEmpleado.js';
+
+import Configuracion from '../Clases/Configuracion.js';
 
 export default class Empleado {
-    constructor(nombre, apellido, celular, correo) {
+    constructor(nombre, apellido, celularPrincipal, correoPrincipal) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.celular = celular;
-        this.correo = correo;
+        this.celularPrincipal = celularPrincipal;
+        this.correoPrincipal = correoPrincipal;
         this.contadorDeViernes = 0;
         this.recibioSuPrimerPago = false;
-        this.configuracionEmpleado = new ConfiguracionEmpleado();
+        this.configuracion = new Configuracion();
         //TODO:añadir Facebook,numero de cuenta
     }
 
@@ -50,18 +48,6 @@ export default class Empleado {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
     }
 
-    crearMetodoDePago(tipo) {
-        switch (tipo) {
-            case 'Cheque':
-                this.metodoDePago = new pagoPorCheque();
-                break;
-            case 'Efectivo':
-                this.metodoDePago = new pagoEnEfectivo();
-                break;
-            case 'Deposito':
-                this.metodoDePago = new pagoPorDepositoBancario();
-                break;
-        }
-    }
+
 
 }

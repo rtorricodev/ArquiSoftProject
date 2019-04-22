@@ -5,4 +5,6 @@ export default class CalculadoraPorHoras {
                 ((empleado.RegistroDeTiempo.tarifa * 1.5) *
                 empleado.RegistroDeTiempo.retornarHorasExtrasTotalesCalculadas());
     }
+
+
 }

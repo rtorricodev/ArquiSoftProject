@@ -10,23 +10,23 @@ describe('Funciones basicas de las notificaciones', () => {
     });
 
     it('Deberia crear notificacion de SMS para un empleado', () => {
-        empleado.configuracionEmpleado.anadirServicioNotificacion('SMS');
-        expect(empleado.configuracionEmpleado.serviciosDeNotificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por SMS');
+        empleado.configuracion.anadirServicioNotificacion('SMS');
+        expect(empleado.configuracion.serviciosDeNotificaciones[0].tipo.notificar()).equal('Sera notificado por SMS');
     });
 
     it('Deberia crear notificacion de correo para un empleado', () => {
-        empleado.configuracionEmpleado.anadirServicioNotificacion('Correo');
-        expect(empleado.configuracionEmpleado.serviciosDeNotificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por correo');
+        empleado.configuracion.anadirServicioNotificacion('Correo');
+        expect(empleado.configuracion.serviciosDeNotificaciones[0].tipo.notificar()).equal('Sera notificado por correo');
     });
 
     it('Deberia crear notificacion de Facebook para un empleado', () => {
-        empleado.configuracionEmpleado.anadirServicioNotificacion('Facebook');
-        expect(empleado.configuracionEmpleado.serviciosDeNotificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por Facebook');
+        empleado.configuracion.anadirServicioNotificacion('Facebook');
+        expect(empleado.configuracion.serviciosDeNotificaciones[0].tipo.notificar()).equal('Sera notificado por Facebook');
     });
 
     it('Deberia crear notificacion de WhatsApp para un empleado', () => {
-        empleado.configuracionEmpleado.anadirServicioNotificacion('WhatsApp');
-        expect(empleado.configuracionEmpleado.serviciosDeNotificaciones[0].tipo.mensajeDeNotificacion()).equal('Sera notificado por WhatsApp');
+        empleado.configuracion.anadirServicioNotificacion('WhatsApp');
+        expect(empleado.configuracion.serviciosDeNotificaciones[0].tipo.notificar()).equal('Sera notificado por WhatsApp');
     });
 
 })

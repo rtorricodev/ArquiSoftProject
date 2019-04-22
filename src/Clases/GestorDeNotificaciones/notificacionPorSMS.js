@@ -1,5 +1,5 @@
 export default class notificacionPorSMS {
-    mensajeDeNotificacion() {
+    notificar() {
         return 'Sera notificado por SMS';
     }
 }

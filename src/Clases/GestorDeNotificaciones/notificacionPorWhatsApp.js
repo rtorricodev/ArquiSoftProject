@@ -1,5 +1,5 @@
 export default class notificacionPorWhatsApp {
-    mensajeDeNotificacion() {
+    notificar() {
         return 'Sera notificado por WhatsApp';
     }
 }

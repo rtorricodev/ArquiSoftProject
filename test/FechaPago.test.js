@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
 
-import Empleado from '../../src/Clases/Empleado.js';
-import Fecha from '../../src/Clases/Fecha/Fecha.js';
-import HojaDeTiempo from '../../src/Clases/RegistroDeTiempo.js';
-import HojaDeVenta from '../../src/Clases/RegistroDeVenta.js';
+import Empleado from '../src/Clases/Empleado.js';
+import Fecha from '../src/Clases/Fecha/Fecha.js';
+import HojaDeTiempo from '../src/Clases/RegistroDeTiempo.js';
+import HojaDeVenta from '../src/Clases/RegistroDeVenta.js';
 
 describe('Funciones basicas de la calculadora de fecha de pago', () => {
 

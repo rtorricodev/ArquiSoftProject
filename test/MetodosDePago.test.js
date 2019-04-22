@@ -11,24 +11,24 @@ describe('Funciones basicas del metodo de pago', () => {
     });
 
     it('Deberia crear un empleado con el metodo de pago por cheque', () => {
-        empleado.crearMetodoDePago('Cheque');
-        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
+        empleado.configuracion.escogerMetodoDePago('Cheque');
+        expect(empleado.configuracion.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
     })
 
     it('Deberia crear un empleado con el metodo de pago en efectivo', () => {
-        empleado.crearMetodoDePago('Efectivo');
-        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado en efectivo por RRHH');
+        empleado.configuracion.escogerMetodoDePago('Efectivo');
+        expect(empleado.configuracion.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado en efectivo por RRHH');
     })
 
     it('Deberia crear un empleado con el metodo de pago por deposito bancario', () => {
-        empleado.crearMetodoDePago('Deposito');
-        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por deposito bancario');
+        empleado.configuracion.escogerMetodoDePago('Deposito');
+        expect(empleado.configuracion.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por deposito bancario');
     })
 
     it('Deberia crear un empleado con el metodo de pago efectivo y cambia a cheque', () => {
-        empleado.crearMetodoDePago('Efectivo');
-        empleado.crearMetodoDePago('Cheque');
-        expect(empleado.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
+        empleado.configuracion.escogerMetodoDePago('Efectivo');
+        empleado.configuracion.escogerMetodoDePago('Cheque');
+        expect(empleado.configuracion.metodoDePago.mensajeDeMetodoDePago()).equal('Este sera pagado por cheque');
     })
 
 })

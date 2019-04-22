@@ -3,7 +3,7 @@ import notificacionPorCorreo from './GestorDeNotificaciones/notificacionPorCorre
 import notificacionPorFacebook from './GestorDeNotificaciones/notificacionPorFacebook.js';
 import notificacionPorWhatsApp from './GestorDeNotificaciones/notificacionPorWhatsApp.js';
 
-export default class Notificacion {
+export default class ServicioNotificacion {
 
     constructor(nombre) {
         this.tipo = this.crearTipoDeNotificacion(nombre);
@@ -14,7 +14,7 @@ export default class Notificacion {
         this.notificar = true;
     }
 
-    DesactivarNotificacion() {
+    desactivarNotificacion() {
         this.notificar = false;
     }
 

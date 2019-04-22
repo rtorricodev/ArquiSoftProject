@@ -1,5 +1,5 @@
 export default class notificacionPorFacebook {
-    mensajeDeNotificacion() {
+    notificar() {
         return 'Sera notificado por Facebook';
     }
 }

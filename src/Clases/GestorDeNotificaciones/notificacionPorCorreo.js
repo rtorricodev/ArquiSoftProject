@@ -1,5 +1,5 @@
 export default class notificacionPorCorreo {
-    mensajeDeNotificacion() {
+    notificar() {
         return 'Sera notificado por correo';
     }
 }
