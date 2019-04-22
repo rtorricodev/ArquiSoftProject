@@ -1,7 +1,5 @@
-import Empleado from "../Empleado";
-
 export default class CalculadoraFija{
-    static calcularMonto(empleado){
+    calcularMonto(empleado){
         if(!empleado.recibioSuPrimerPago){
             /*salario prorrateado*/
             empleado.recibioSuPrimerPago = true;

@@ -11,11 +11,11 @@ export default class Boleta {
     crearCalculadoraDeSalario(){
         switch(this.empleado.tipo){
             case 'fijo': 
-                return CalculadoraFija;
+                return new CalculadoraFija;
             case 'comision': 
-                return CalculadoraPorComision;
+                return new CalculadoraPorComision;
             case 'porHora': 
-                return CalculadoraPorHoras;
+                return new CalculadoraPorHoras;
         }
     }
 
