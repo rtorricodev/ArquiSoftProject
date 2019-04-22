@@ -10,8 +10,7 @@ export default class CalculadoraFechaPorComision {
                 this.estaDisponible = true;
             }
         }   
-        this.restaurarContadorDeEmpleado(empleado);
-        return this.estaDisponible;
+        this.restaurarContadorDeEmpleado(empleado); 
     }
 
     pasaronDosSemanas(empleado){
