@@ -12,6 +12,10 @@ export default class CalculadoraFija{
     }
 
     obtenerSalarioProrrateado(empleado){
-        return (empleado.salarioFijo * (empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes() - empleado.fechaInicioDeTrabajo.dia + 1 )) / empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes();
+        return (empleado.salarioFijo * this.obtenerDiasTrabajados(empleado)) / empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes();
+    }
+
+    obtenerDiasTrabajados(empleado){
+        return (empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes() - empleado.fechaInicioDeTrabajo.dia + 1 );
     }
 }
