@@ -8,7 +8,7 @@ export default class CalculadoraFija{
     }
 
     noRecibioSuPrimerPago(empleado){
-        return empleado.recibioSuPrimerPago === false;
+        return !empleado.recibioSuPrimerPago === true;
     }
 
     obtenerSalarioProrrateado(empleado){
