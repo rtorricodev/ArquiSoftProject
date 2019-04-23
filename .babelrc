@@ -1,3 +1,8 @@
 {
-    "presets": ["es2015"], //para npm test con mocha
+  "presets": ["es2015"],
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  }
 }

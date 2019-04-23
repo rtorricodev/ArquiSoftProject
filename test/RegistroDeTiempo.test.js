@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-import RegistroDeTiempo from '../src/Hojas/RegistroDeTiempo.js';
-import TarjetaDeTiempo from '../src/Tarjetas/TarjetaDeTiempo.js';
+import RegistroDeTiempo from '../src/Clases/RegistroDeTiempo.js';
+import TarjetaDeTiempo from '../src/Clases/TarjetaDeTiempo.js';
 
 describe('Funciones básicas del registro de tiempo',()=>{
 
@@ -19,8 +19,8 @@ describe('Funciones básicas del registro de tiempo',()=>{
 
     beforeEach(()=>{
 
-        nuevoRegistro = new RegistroDeTiempo(7,10);
-        nuevoRegistro2 = new RegistroDeTiempo(7,10);
+        nuevoRegistro = new RegistroDeTiempo(7,10,1);
+        nuevoRegistro2 = new RegistroDeTiempo(7,10,1);
 
         horaDeEntrada = new Date();
         horaDeEntrada.setHours(10);

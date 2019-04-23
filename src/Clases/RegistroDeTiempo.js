@@ -1,7 +1,8 @@
 export default class RegistroDeTiempo {
-    constructor(tarifa, horasTotalesTrabajadasManuales) {
+    constructor(tarifa, horasTotalesTrabajadasManuales, horasATrabajarPorDia) {
         this.tarifa                         = tarifa;
         this.horasTotalesTrabajadasManuales = horasTotalesTrabajadasManuales;
+        this.horasATrabajarPorDia           = horasATrabajarPorDia;
         this.listaDeTarjetas                = [];
     }
 
@@ -20,11 +21,20 @@ export default class RegistroDeTiempo {
     }
 
     retornarHorasTotalesCalculadas(){
-        let horasTotalesCalculadas = 0;
+        let horasExtrasTotalesCalculadas = 0;
         this.listaDeTarjetas.forEach(tarjeta =>{
-            horasTotalesCalculadas += tarjeta.calcularDuracion();
+            horasExtrasTotalesCalculadas += this.horasATrabajarPorDia;
         })
-        return horasTotalesCalculadas
+        return horasExtrasTotalesCalculadas;
+    }
+
+    retornarHorasExtrasTotalesCalculadas(){
+        let horasExtrasTotalesCalculadas = 0;
+        this.listaDeTarjetas.forEach(tarjeta =>{
+            if(tarjeta.calcularDuracion() > this.horasATrabajarPorDia)
+                horasExtrasTotalesCalculadas += tarjeta.calcularDuracion() - this.horasATrabajarPorDia;
+        })
+        return horasExtrasTotalesCalculadas;
     }
 
 
