@@ -2,29 +2,30 @@ const MongoClient = require('mongodb').MongoClient;
 
 export default class Mongo{
     constructor(){
-        this.conexion = null;
-        this.baseDeDatos = null;
-        this.coleccion = null;
         this.enlace = 'mongodb://localhost/27017';
         this.nombreBD = 'ArquiSoft';
-        this.establecerConexion()
     }
 
     async establecerConexion(){
         this.conexion =  await MongoClient.connect(this.enlace,{ useNewUrlParser: true } );
-        this.baseDeDatos = this.conexion.db(this.nombreBD);
+        this.baseDeDatos = await this.conexion.db(this.nombreBD);
     }
 
-    async guardar(objeto,tabla){
+    guardar(objeto,tabla){
         let coleccion = this.baseDeDatos.collection(tabla);
-        coleccion.insertOne(objeto);
+        return coleccion.insertOne(objeto);
     }
 
-    async listar(tabla){
-        let coleccion =  await this.baseDeDatos.collection(tabla);
-        let cursor = await coleccion.find({});
-        let arreglo = await cursor.toArray();
+    listar(tabla){
+        let coleccion =  this.baseDeDatos.collection(tabla);
+        let cursor = coleccion.find({});
+        let arreglo = cursor.toArray();
         return arreglo;
+    }
+
+    borrar(consulta,tabla){
+        let coleccion = this.baseDeDatos.collection(tabla);
+        return coleccion.deleteOne(consulta);
     }
 
 }
