@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 
-import Empleado from '../src/Clases/Empleado.js';
-import BaseDeDatos from '../src/Persistencia/BaseDeDatos';
-import Fecha from '../src/Clases/Fecha/Fecha.js';
-import Boleta from '../src/Clases/Boleta.js';
+import Empleado from '../../src/Clases/Empleado.js';
+import BaseDeDatos from '../../src/Persistencia/BaseDeDatos';
+import Fecha from '../../src/Clases/Fecha/Fecha.js';
+import Boleta from '../../src/Clases/Boleta.js';
 import { error } from 'util';
 
 
