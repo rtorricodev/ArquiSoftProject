@@ -14,9 +14,7 @@ describe('Funciones basicas de la persistencia de empleado', () => {
     let mario;
     let fechaInicioDeTrabajo;
     let boletaDeMario;
-    
-  
-        
+ 
 
     before(()=>{
         bd = new BaseDeDatos('no-relacional');
