@@ -1,29 +1,29 @@
 export default class CalculadoraFechaPorComision {
-
     constructor(){
         this.estaDisponible = false;
+        this.contadorDeViernes = 0;
     }
 
-    estaDisponibleParaPagar(fecha, empleado){
+    estaDisponibleParaPagar(fecha){
         if(fecha.esViernes()){
-            if(this.pasaronDosSemanas(empleado)){
+            if(this.pasaronDosSemanas()){
                 this.estaDisponible = true;
             }
         }   
-        this.restaurarContadorDeEmpleado(empleado); 
+        this.restaurarContadorDeEmpleado(); 
         return this.estaDisponible;
     }
 
-    pasaronDosSemanas(empleado){
-        return empleado.contadorDeViernes === 0 || empleado.contadorDeViernes === 2;
+    pasaronDosSemanas(){
+        return this.contadorDeViernes === 0 || this.contadorDeViernes === 2;
     }
 
-    restaurarContadorDeEmpleado(empleado){
-        if(empleado.contadorDeViernes === 3){
-            empleado.contadorDeViernes = 0;
+    restaurarContadorDeEmpleado(){
+        if(this.contadorDeViernes === 3){
+            this.contadorDeViernes = 0;
         }
         else{
-            empleado.contadorDeViernes += 1;
+            this.contadorDeViernes += 1;
         }
     }
 

@@ -1,16 +1,19 @@
 export default class CalculadoraPorHoras {
-    calcularMonto(empleado) {
-        return  this.obtenerCalculoDeSalarioHorasNormal(empleado) + this.obtenerCalculoDeSalarioHorasExtras(empleado);                
+    constructor(registroDeTiempo){
+        this.registroDeTiempo = registroDeTiempo;
+    }
+    calcularMonto() {
+        return  this.obtenerCalculoDeSalarioHorasNormal() + this.obtenerCalculoDeSalarioHorasExtras();                
     }
 
-    obtenerCalculoDeSalarioHorasNormal(empleado){
-        return empleado.RegistroDeTiempo.tarifa * 
-               (empleado.RegistroDeTiempo.retornarHorasTotalesCalculadas() + empleado.RegistroDeTiempo.horasTotalesTrabajadasManuales);
+    obtenerCalculoDeSalarioHorasNormal(){
+        return this.registroDeTiempo.tarifa * 
+               (this.registroDeTiempo.retornarHorasTotalesCalculadas() + this.registroDeTiempo.horasTotalesTrabajadasManuales);
     }
 
-    obtenerCalculoDeSalarioHorasExtras(empleado){
-        return (empleado.RegistroDeTiempo.tarifa * 1.5) *
-        empleado.RegistroDeTiempo.retornarHorasExtrasTotalesCalculadas();
+    obtenerCalculoDeSalarioHorasExtras(){
+        return (this.registroDeTiempo.tarifa * 1.5) *
+        this.registroDeTiempo.retornarHorasExtrasTotalesCalculadas();
     }
 
 }
