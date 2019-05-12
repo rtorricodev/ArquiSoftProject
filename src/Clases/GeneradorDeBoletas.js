@@ -10,7 +10,7 @@ export default class GeneradorDeBoletas {
         this.listaDeEmpleados.forEach(empleado => {
             if (empleado.verificarSiEstaDisponibleParaPagar(fecha)) {
                 let boleta = new Boleta(empleado);
-                boletasGeneradas.push(empleado.nombre +' monto: ' + boleta.salario);
+                boletasGeneradas.push(empleado.nombre +' monto: ' + empleado.calcularSalario());
             }
         });
         return boletasGeneradas;

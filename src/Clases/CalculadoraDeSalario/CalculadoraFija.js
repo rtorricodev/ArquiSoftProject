@@ -1,21 +1,27 @@
 export default class CalculadoraFija{
-    calcularMonto(empleado){
-        if(this.noRecibioSuPrimerPago(empleado)){
-            empleado.recibioSuPrimerPago = true;
-            return this.obtenerSalarioProrrateado(empleado);
+    constructor(salarioFijo, fechaInicioDeTrabajo){
+        this.salarioFijo = salarioFijo;
+        this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
+        this.recibioSuPrimerPago = false;
+    }
+
+    calcularMonto(){
+        if(this.noRecibioSuPrimerPago()){
+            this.recibioSuPrimerPago = true;
+            return this.obtenerSalarioProrrateado();
         }
-        return empleado.salarioFijo;
+        return this.salarioFijo;
     }
 
-    noRecibioSuPrimerPago(empleado){
-        return !empleado.recibioSuPrimerPago === true;
+    noRecibioSuPrimerPago(){
+        return !this.recibioSuPrimerPago === true;
     }
 
-    obtenerSalarioProrrateado(empleado){
-        return (empleado.salarioFijo * this.obtenerDiasTrabajados(empleado)) / empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes();
+    obtenerSalarioProrrateado(){
+        return (this.salarioFijo * this.obtenerDiasTrabajados()) / this.fechaInicioDeTrabajo.obtenerUltimoDiaMes();
     }
 
-    obtenerDiasTrabajados(empleado){
-        return (empleado.fechaInicioDeTrabajo.obtenerUltimoDiaMes() - empleado.fechaInicioDeTrabajo.dia + 1 );
+    obtenerDiasTrabajados(){
+        return (this.fechaInicioDeTrabajo.obtenerUltimoDiaMes() - this.fechaInicioDeTrabajo.dia + 1 );
     }
 }
