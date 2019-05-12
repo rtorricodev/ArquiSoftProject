@@ -1,7 +1,12 @@
 export default class CalculadoraPorComision {
-    calcularMonto(empleado) {
-        return empleado.salarioFijo + 
-               empleado.RegistroDeVenta.comision * 
-               empleado.RegistroDeVenta.ventasTotales;
+    constructor(salarioFijo, RegistroDeVenta){
+        this.salarioFijo = salarioFijo;
+        this.RegistroDeVenta = RegistroDeVenta;
+    }
+    
+    calcularMonto() {
+        return this.salarioFijo + 
+               this.RegistroDeVenta.comision * 
+               this.RegistroDeVenta.ventasTotales;
     }
 }

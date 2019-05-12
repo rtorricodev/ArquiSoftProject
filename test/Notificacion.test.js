@@ -11,7 +11,7 @@ describe('Funciones basicas de las notificaciones', () => {
     let facebook = new ServicioNotificacion('Facebook');
     let wtp = new ServicioNotificacion('WhatsApp');
     beforeEach(() => {
-        empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlosBodoque@esMiEmail.com', 'cheque', SMS);
+        empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlosBodoque@esMiEmail.com', 'fijo', 'fechafijo', 'cheque', SMS);
     });
 
     it('Deberia crear notificacion de SMS para un empleado', () => {

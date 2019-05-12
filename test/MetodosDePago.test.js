@@ -18,9 +18,9 @@ describe('Funciones basicas del metodo de pago', () => {
         cheque = new pagoPorCheque();
         efectivo = new pagoEnEfectivo();
         bancario = new pagoPorDepositoBancario();
-        empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', cheque);
-        empleado2 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', efectivo);
-        empleado3 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', bancario);
+        empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', cheque);
+        empleado2 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', efectivo);
+        empleado3 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', bancario);
     });
 
     it('Deberia crear un empleado con el metodo de pago por cheque', () => {
