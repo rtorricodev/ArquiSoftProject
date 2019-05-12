@@ -2,18 +2,15 @@ import CalculadoraFechaPorComision from './CalculadoraDeFechaPago/CalculadoraFec
 import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaPorHoras.js';
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
-import Configuracion from '../Clases/Configuracion.js';
-
 export default class Empleado {
-    constructor(nombre, apellido, celularPrincipal, correoPrincipal) {
+    constructor(nombre, apellido, celularPrincipal, correoPrincipal, metodoDePago) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.celularPrincipal = celularPrincipal;
         this.correoPrincipal = correoPrincipal;
         this.contadorDeViernes = 0;
         this.recibioSuPrimerPago = false;
-        this.configuracion = new Configuracion();
-        //TODO:añadir Facebook,numero de cuenta
+        this.metodoDePago = metodoDePago;
     }
 
     esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo) {
@@ -47,7 +44,5 @@ export default class Empleado {
     verificarSiEstaDisponibleParaPagar(fecha) {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
     }
-
-
 
 }

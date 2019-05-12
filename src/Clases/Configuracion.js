@@ -1,8 +1,4 @@
 import ServicioNotificacion from './ServicioNotificacion';
-import pagoPorCheque from './GestorDePagos/pagoPorCheque.js';
-import pagoEnEfectivo from './GestorDePagos/pagoEnEfectivo.js';
-import pagoPorDepositoBancario from './GestorDePagos/pagoPorDepositoBancario.js';
-
 
 export default class Configuracion {
     constructor() {
