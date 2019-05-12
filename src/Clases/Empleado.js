@@ -3,7 +3,7 @@ import CalculadoraFechaPorHoras from './CalculadoraDeFechaPago/CalculadoraFechaP
 import CalculadoraFechaFija from './CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
 export default class Empleado {
-    constructor(nombre, apellido, celularPrincipal, correoPrincipal, metodoDePago) {
+    constructor(nombre, apellido, celularPrincipal, correoPrincipal, metodoDePago, notificacion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.celularPrincipal = celularPrincipal;
@@ -11,6 +11,7 @@ export default class Empleado {
         this.contadorDeViernes = 0;
         this.recibioSuPrimerPago = false;
         this.metodoDePago = metodoDePago;
+        this.notificacion = notificacion;
     }
 
     esEmpleadoFijo(salarioFijo, fechaInicioDeTrabajo) {
@@ -43,6 +44,10 @@ export default class Empleado {
 
     verificarSiEstaDisponibleParaPagar(fecha) {
         return this.crearCalculadoraDeFechaPago().estaDisponibleParaPagar(fecha, this);
+    }
+
+    notificar() {
+        return this.notificacion.tipo.notificar();
     }
 
 }
