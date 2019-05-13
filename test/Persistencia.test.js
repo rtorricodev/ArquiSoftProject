@@ -7,7 +7,8 @@ import Mongo from '../src/BaseDeDatos/Mongo.js';
 import Empleado from '../src/Clases/Empleado.js';
 import Fecha from '../src/Clases/Fecha/Fecha.js';
 import Boleta from '../src/Clases/Boleta.js';
-import { error } from 'util';
+import CalculadoraFija from '../src/Clases/CalculadoraDeSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
 
 describe('Funciones basicas de la persistencia de empleado', () => {
@@ -25,9 +26,12 @@ describe('Funciones basicas de la persistencia de empleado', () => {
         mongoConected.then( () =>{
             persistencia = new Persistencia(mongo);
         })
-        empleado = new Empleado('Mario');
-        fechaInicioDeTrabajo = new Fecha(1, 4, 2019);
-        empleado.esEmpleadoFijo(2000, fechaInicioDeTrabajo);
+        let fechaInicioDeTrabajo = new Fecha(1, 4, 2019);
+        let calculadoraFechaFija = new CalculadoraFechaFija();
+        let calculadoraFija = new CalculadoraFija();
+        let empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlosBodoque@esMiEmail.com', calculadoraFija,calculadoraFechaFija);
+   
+      
         boletaDeMario = new Boleta(empleado);
     })
     
