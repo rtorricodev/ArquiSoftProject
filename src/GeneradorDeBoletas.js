@@ -1,10 +1,10 @@
 import Boleta from './Boleta.js';
-import Persistencia from '../BaseDeDatos/Persistencia.js';
+import Persistencia from './BaseDeDatos/Persistencia.js';
 
 
 export default class GeneradorDeBoletas {
     constructor(listaDeEmpleados) {
-        this.listaDeEmpleados = listaDeEmpleados;
+        this.listaDeEmpleados =  listaDeEmpleados;
     }
 
     generarBoletas(fecha) {
@@ -19,3 +19,5 @@ export default class GeneradorDeBoletas {
     }
 
 }
+
+

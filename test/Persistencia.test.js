@@ -4,12 +4,11 @@ const assert = require('chai').assert;
 import Persistencia from '../src/BaseDeDatos/Persistencia.js';
 import Mongo from '../src/BaseDeDatos/Mongo.js';
 
-import Empleado from '../src/Clases/Empleado.js';
-import Fecha from '../src/Clases/Fecha/Fecha.js';
-import Boleta from '../src/Clases/Boleta.js';
+import Empleado from '../src/Empleado.js';
+import Boleta from '../src/Boleta.js';
 
-import CalculadoraFija from '../src/Clases/CalculadoraDeSalario/CalculadoraFija.js';
-import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
+import CalculadoraFija from '../src/CalculadoraDeSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
 describe('Funciones basicas de la persistencia de empleado', () => {
 

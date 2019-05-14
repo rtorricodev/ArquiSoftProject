@@ -1,11 +1,11 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Clases/Empleado.js';
-import Fecha from '../src/Clases/Fecha/Fecha.js';
-import GeneradorDeBoletas from '../src/Clases/GeneradorDeBoletas.js';
+import Empleado from '../src/Empleado.js';
+import Fecha from '../src/Fecha/Fecha.js';
+import GeneradorDeBoletas from '../src/GeneradorDeBoletas.js';
 
-import CalculadoraFija from '../src/Clases/CalculadoraDeSalario/CalculadoraFija.js';
-import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
+import CalculadoraFija from '../src/CalculadoraDeSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
 describe('Deberia generar boletas para cada empleado', () => {
 

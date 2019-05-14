@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-import TarjetaDeTiempo from '../src/Clases/TarjetaDeTiempo.js';
-import RegistroDeTiempo from '../src/Clases/RegistroDeTiempo.js';
+import TarjetaDeTiempo from '../src/TarjetaDeTiempo.js';
+import RegistroDeTiempo from '../src/RegistroDeTiempo.js';
 
 
 describe('Funciones básica de las tarjetas de registro de tiempo', () => {
