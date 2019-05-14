@@ -1,8 +1,10 @@
 import Boleta from './Boleta.js';
+import Persistencia from '../BaseDeDatos/Persistencia.js';
+
 
 export default class GeneradorDeBoletas {
-    constructor() {
-        this.listaDeEmpleados = [];
+    constructor(listaDeEmpleados) {
+        this.listaDeEmpleados = listaDeEmpleados;
     }
 
     generarBoletas(fecha) {
@@ -10,7 +12,7 @@ export default class GeneradorDeBoletas {
         this.listaDeEmpleados.forEach(empleado => {
             if (empleado.verificarSiEstaDisponibleParaPagar(fecha)) {
                 let boleta = new Boleta(empleado);
-                boletasGeneradas.push(empleado.nombre +' monto: ' + boleta.salario);
+                boletasGeneradas.push(empleado.nombre +' monto: ' + empleado.calcularSalario());
             }
         });
         return boletasGeneradas;
