@@ -43,39 +43,39 @@ describe('Funciones basicas de la persistencia de empleado', () => {
         })
     })
     
-    // it('Deberia obtener la lista de empleados', () => {
-    //     mongoConected.then( () => {
-    //         persistencia.obtenerListaDe('Empleados');
-    //     })
-    // })
+    it('Deberia obtener la lista de empleados', () => {
+        mongoConected.then( () => {
+            persistencia.obtenerListaDe('Empleados');
+        })
+    })
         
 
-    // it('Deberia elminar un Empleado', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.eliminarObjeto(empleado,'Empleados');
+    it('Deberia elminar un Empleado', ()=>{
+        mongoConected.then(()=>{
+            persistencia.eliminarObjeto(empleado,'Empleados');
    
-    //     });
-    // })
+        });
+    })
 
-    // it('Deberia crear una boleta', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.registrarObjeto(boletaDeMario,'Boletas');
-    //     })
-    // })
+    it('Deberia crear una boleta', ()=>{
+        mongoConected.then(()=>{
+            persistencia.registrarObjeto(boletaDeMario,'Boletas');
+        })
+    })
 
-    // it('Deberia retornar la lista de boletas', () => {
-    //     mongoConected.then( () => {
-    //         persistencia.obtenerListaDe('Boletas');
+    it('Deberia retornar la lista de boletas', () => {
+        mongoConected.then( () => {
+            persistencia.obtenerListaDe('Boletas');
 
-    //     })
-    // })
+        })
+    })
 
 
-    // it('Deberia elminar una Boleta', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.eliminarObjeto(boletaDeMario,'Boletas');
-    //     });
-    // })
+    it('Deberia elminar una Boleta', ()=>{
+        mongoConected.then(()=>{
+            persistencia.eliminarObjeto(boletaDeMario,'Boletas');
+        });
+    })
 
     after(()=>{
         mongoConected.then(()=>{
