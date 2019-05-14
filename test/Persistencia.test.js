@@ -4,12 +4,11 @@ const assert = require('chai').assert;
 import Persistencia from '../src/BaseDeDatos/Persistencia.js';
 import Mongo from '../src/BaseDeDatos/Mongo.js';
 
-import Empleado from '../src/Clases/Empleado.js';
-import Fecha from '../src/Clases/Fecha/Fecha.js';
-import Boleta from '../src/Clases/Boleta.js';
+import Empleado from '../src/Empleado.js';
+import Boleta from '../src/Boleta.js';
 
-import CalculadoraFija from '../src/Clases/CalculadoraDeSalario/CalculadoraFija.js';
-import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
+import CalculadoraFija from '../src/CalculadoraDeSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
 describe('Funciones basicas de la persistencia de empleado', () => {
 
@@ -43,39 +42,39 @@ describe('Funciones basicas de la persistencia de empleado', () => {
         })
     })
     
-    // it('Deberia obtener la lista de empleados', () => {
-    //     mongoConected.then( () => {
-    //         persistencia.obtenerListaDe('Empleados');
-    //     })
-    // })
+    it('Deberia obtener la lista de empleados', () => {
+        mongoConected.then( () => {
+            persistencia.obtenerListaDe('Empleados');
+        })
+    })
         
 
-    // it('Deberia elminar un Empleado', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.eliminarObjeto(empleado,'Empleados');
+    it('Deberia elminar un Empleado', ()=>{
+        mongoConected.then(()=>{
+            persistencia.eliminarObjeto(empleado,'Empleados');
    
-    //     });
-    // })
+        });
+    })
 
-    // it('Deberia crear una boleta', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.registrarObjeto(boletaDeMario,'Boletas');
-    //     })
-    // })
+    it('Deberia crear una boleta', ()=>{
+        mongoConected.then(()=>{
+            persistencia.registrarObjeto(boletaDeMario,'Boletas');
+        })
+    })
 
-    // it('Deberia retornar la lista de boletas', () => {
-    //     mongoConected.then( () => {
-    //         persistencia.obtenerListaDe('Boletas');
+    it('Deberia retornar la lista de boletas', () => {
+        mongoConected.then( () => {
+            persistencia.obtenerListaDe('Boletas');
 
-    //     })
-    // })
+        })
+    })
 
 
-    // it('Deberia elminar una Boleta', ()=>{
-    //     mongoConected.then(()=>{
-    //         persistencia.eliminarObjeto(boletaDeMario,'Boletas');
-    //     });
-    // })
+    it('Deberia elminar una Boleta', ()=>{
+        mongoConected.then(()=>{
+            persistencia.eliminarObjeto(boletaDeMario,'Boletas');
+        });
+    })
 
     after(()=>{
         mongoConected.then(()=>{
