@@ -7,8 +7,8 @@ import HojaDeVenta from '../src/Clases/RegistroDeVenta.js';
 
 import CalculadoraFechaPorComision from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaPorComision.js';
 import CalculadoraFechaPorHoras from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaPorHoras.js';
-import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 
+import CalculadoraFechaFija from '../src/Clases/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
 import CalculadoraPorComision from '../src/Clases/CalculadoraDeSalario/CalculadoraPorComision.js';
 import CalculadoraPorHoras from '../src/Clases/CalculadoraDeSalario/CalculadoraPorHoras.js';
 import CalculadoraFija from '../src/Clases/CalculadoraDeSalario/CalculadoraFija.js';
