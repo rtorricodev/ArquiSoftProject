@@ -1,36 +1,36 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
-import ServicioNotificacion from '../src/ServicioNotificacion.js';
+import { Notificacion } from '../src/Notificacion/Notificacion.js';
+import { Correo } from '../src/Notificacion/Tipos/Correo.js';
+import { WhatsApp } from '../src/Notificacion/Tipos/WhatsApp.js';
+import { Facebook } from '../src/Notificacion/Tipos/Facebook.js';
+import { SMS } from '../src/Notificacion/Tipos/SMS.js';
+
+let notificacion;
+beforeEach(() => {
+    notificacion = new Notificacion();
+})
 
 describe('Funciones basicas de las notificaciones', () => {
 
-    let empleado;
-    let SMS = new ServicioNotificacion('SMS');
-    let correo = new ServicioNotificacion('Correo');
-    let facebook = new ServicioNotificacion('Facebook');
-    let wtp = new ServicioNotificacion('WhatsApp');
-    beforeEach(() => {
-        empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlosBodoque@esMiEmail.com', 'fijo', 'fechafijo', 'cheque', SMS);
+    it('Deberia crear notificacion por correo', () => {
+        notificacion = new Correo(notificacion);
+        expect(notificacion.notificar()).equal('Sera notificado por correo');
     });
 
-    it('Deberia crear notificacion de SMS para un empleado', () => {
-        expect(empleado.notificar()).equal('Sera notificado por SMS');
+    it('Deberia crear notificacion por whatsapp', () => {
+        notificacion = new WhatsApp(notificacion);
+        expect(notificacion.notificar()).equal('Sera notificado por WhatsApp');
     });
 
-    it('Deberia crear notificacion de correo para un empleado', () => {
-        empleado.notificacion = correo;
-        expect(empleado.notificar()).equal('Sera notificado por correo');
+    it('Deberia crear notificacion por facebook', () => {
+        notificacion = new Facebook(notificacion);
+        expect(notificacion.notificar()).equal('Sera notificado por Facebook');
     });
 
-    it('Deberia crear notificacion de Facebook para un empleado', () => {
-        empleado.notificacion = facebook;
-        expect(empleado.notificar()).equal('Sera notificado por Facebook');
-    });
-
-    it('Deberia crear notificacion de WhatsApp para un empleado', () => {
-        empleado.notificacion = wtp;
-        expect(empleado.notificar()).equal('Sera notificado por WhatsApp');
+    it('Deberia crear notificacion por SMS', () => {
+        notificacion = new SMS(notificacion);
+        expect(notificacion.notificar()).equal('Sera notificado por SMS');
     });
 
 })
