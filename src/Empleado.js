@@ -19,10 +19,6 @@ export default class Empleado {
     }
 
     notificar() {
-        return this.notificacion.tipo.notificar();
-    }
-
-    notificar2() {
         return this.notificacion.notificar();
     }
 }
