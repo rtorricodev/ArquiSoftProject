@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
-import ServicioNotificacion from '../src/ServicioNotificacion.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import ServicioNotificacion from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/ServicioNotificacion.js';
 
 describe('Funciones basicas de las notificaciones', () => {
 

@@ -1,7 +1,7 @@
-import notificacionPorSMS from './GestorDeNotificaciones/notificacionPorSMS';
-import notificacionPorCorreo from './GestorDeNotificaciones/notificacionPorCorreo.js';
-import notificacionPorFacebook from './GestorDeNotificaciones/notificacionPorFacebook.js';
-import notificacionPorWhatsApp from './GestorDeNotificaciones/notificacionPorWhatsApp.js';
+import notificacionPorSMS from '../RecibirNotificaciones/notificacionPorSMS.js';
+import notificacionPorCorreo from '../RecibirNotificaciones/notificacionPorCorreo.js';
+import notificacionPorFacebook from '../RecibirNotificaciones/notificacionPorFacebook.js';
+import notificacionPorWhatsApp from '../RecibirNotificaciones/notificacionPorWhatsApp.js';
 
 export default class ServicioNotificacion {
 

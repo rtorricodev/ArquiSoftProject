@@ -1,14 +1,14 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
-import RegistroDeTiempo from '../src/RegistroDeTiempo.js';
-import RegistroDeVenta from '../src/RegistroDeVenta.js';
-import Fecha from '../src/Fecha/Fecha.js';
-import TarjetaDeTiempo from '../src/TarjetaDeTiempo.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import RegistroDeTiempo from '../src/LogicaDeNegocio/Entidades/RegistroDeTiempo.js';
+import RegistroDeVenta from '../src/LogicaDeNegocio/Entidades/RegistroDeVenta.js';
+import Fecha from '../src/LogicaDeNegocio/Entidades/Fecha.js';
+import TarjetaDeTiempo from '../src/LogicaDeNegocio/Entidades/TarjetaDeTiempo.js';
 
-import CalculadoraPorComision from '../src/CalculadoraDeSalario/CalculadoraPorComision.js';
-import CalculadoraPorHoras from '../src/CalculadoraDeSalario/CalculadoraPorHoras.js';
-import CalculadoraFija from '../src/CalculadoraDeSalario/CalculadoraFija.js';
+import CalculadoraPorComision from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraPorComision.js';
+import CalculadoraPorHoras from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraPorHoras.js';
+import CalculadoraFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraFija.js';
 
 describe('Funciones basicas de la calculadora de salario', () => {
 

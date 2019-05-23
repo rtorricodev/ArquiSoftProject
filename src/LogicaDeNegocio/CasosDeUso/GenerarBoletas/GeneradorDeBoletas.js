@@ -1,5 +1,5 @@
-import Boleta from './Boleta.js';
-import Persistencia from './BaseDeDatos/Persistencia.js';
+import Boleta from '../../Entidades/Boleta.js';
+
 
 
 export default class GeneradorDeBoletas {

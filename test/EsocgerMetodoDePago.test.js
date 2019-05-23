@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
 import { beforeEach } from 'mocha';
-import pagoPorCheque from '../src/GestorDePagos/pagoPorCheque.js';
-import pagoEnEfectivo from '../src/GestorDePagos/pagoEnEfectivo.js';
-import pagoPorDepositoBancario from '../src/GestorDePagos/pagoPorDepositoBancario.js';
+import pagoPorCheque from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoPorCheque.js';
+import pagoEnEfectivo from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoEnEfectivo.js';
+import pagoPorDepositoBancario from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoPorDepositoBancario.js';
 
 describe('Funciones basicas del metodo de pago', () => {
 
@@ -14,6 +14,7 @@ describe('Funciones basicas del metodo de pago', () => {
     let cheque;
     let efectivo;
     let bancario;
+    
     beforeEach(() => {
         cheque = new pagoPorCheque();
         efectivo = new pagoEnEfectivo();

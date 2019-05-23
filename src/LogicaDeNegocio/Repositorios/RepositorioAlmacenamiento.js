@@ -1,6 +1,6 @@
 
 
-export default class Persistencia {
+export default class RepositorioAlmacenamiento {
     constructor(bd){
         this.bd = bd;
     }
