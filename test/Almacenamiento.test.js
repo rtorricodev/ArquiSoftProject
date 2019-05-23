@@ -1,29 +1,28 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 
-import Persistencia from '../src/BaseDeDatos/Persistencia.js';
-import Mongo from '../src/BaseDeDatos/Mongo.js';
+import RepositorioAlmacenamiento from '../src/LogicaDeNegocio/Repositorios/RepositorioAlmacenamiento.js';
+import Mongo from '../src/AdaptadoresDeInterfaz/almacenamiento/Mongo.js';
 
-import Empleado from '../src/Empleado.js';
-import Boleta from '../src/Boleta.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Boleta from '../src/LogicaDeNegocio/Entidades/Boleta.js';
 
-import CalculadoraFija from '../src/CalculadoraDeSalario/CalculadoraFija.js';
-import CalculadoraFechaFija from '../src/CalculadoraDeFechaPago/CalculadoraFechaFija.js';
+import CalculadoraFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularFechaPago/CalculadoraFechaFija.js';
 
-describe('Funciones basicas de la persistencia de empleado', () => {
+describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => {
 
     let mongo;
     let mongoConected;
     let empleado;
-    let persistencia 
+    let repositorioAlmacenamiento 
     let boletaDeMario;
-    let fechaInicioDeTrabajo;
 
     before( () => {
         mongo = new Mongo('mongodb://localhost/27017','ArquiSoft');
         mongoConected = mongo.establecerConexion();
         mongoConected.then( () =>{
-            persistencia = new Persistencia(mongo);
+            repositorioAlmacenamiento = new RepositorioAlmacenamiento(mongo);
         })
         
         
@@ -38,33 +37,33 @@ describe('Funciones basicas de la persistencia de empleado', () => {
 
     it('Deberia guardar un empleado', async () => {
         mongoConected.then(()=>{
-            persistencia.registrarObjeto(empleado,'Empleados');
+            repositorioAlmacenamiento.registrarObjeto(empleado,'Empleados');
         })
     })
     
     it('Deberia obtener la lista de empleados', () => {
         mongoConected.then( () => {
-            persistencia.obtenerListaDe('Empleados');
+            repositorioAlmacenamiento.obtenerListaDe('Empleados');
         })
     })
         
 
     it('Deberia elminar un Empleado', ()=>{
         mongoConected.then(()=>{
-            persistencia.eliminarObjeto(empleado,'Empleados');
+            repositorioAlmacenamiento.eliminarObjeto(empleado,'Empleados');
    
         });
     })
 
     it('Deberia crear una boleta', ()=>{
         mongoConected.then(()=>{
-            persistencia.registrarObjeto(boletaDeMario,'Boletas');
+            repositorioAlmacenamiento.registrarObjeto(boletaDeMario,'Boletas');
         })
     })
 
     it('Deberia retornar la lista de boletas', () => {
         mongoConected.then( () => {
-            persistencia.obtenerListaDe('Boletas');
+            repositorioAlmacenamiento.obtenerListaDe('Boletas');
 
         })
     })
@@ -72,7 +71,7 @@ describe('Funciones basicas de la persistencia de empleado', () => {
 
     it('Deberia elminar una Boleta', ()=>{
         mongoConected.then(()=>{
-            persistencia.eliminarObjeto(boletaDeMario,'Boletas');
+            repositorioAlmacenamiento.eliminarObjeto(boletaDeMario,'Boletas');
         });
     })
 
