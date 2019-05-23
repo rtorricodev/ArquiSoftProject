@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pedidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="newStyles.css" />
+    <script src="Entry.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1 class="title">Nuevo Pedido</h1>
+    <form action="/save" method="POST">
+        <input type="hidden" id="pedido" name="pedido" value="">
+        <input type="hidden" id="id" name="id" value="<%=id%>">
+        <button class="but" id="but1" data-id=1>Guardar</button>
+        <button class="but" data-id=2>Enviar</button></br>
+        <label for="cli">Cliente:</label>
+        <input type="text" name="cli" placeholder="Nombre" /></br>
+    
+        <label for:"estado">Estado: <strong>BORRADOR</strong></label></br>
+        <input type="hidden" id="estado" name="estado" value="">
+        <table class="list">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+            <tr>
+                    <td><select id="products" name="products">
+                    <% for( const product of products )  { %>
+                    <option><%=product%></option>
+                    <% } %>
+                    </select></td>
+                    <td><input type="text" id="cantidad" name="cantidad" value="" ></td>
+                    <td><a id="add">Agregar</a></td>
+            </tr>
+        </table>
+        <h3><strong>Total:<span id="total" for:"total"></span></strong></h3>
+        <input type="hidden" id="inputTotal" name="total" value="">
+    </form>
+</body>
+<html>

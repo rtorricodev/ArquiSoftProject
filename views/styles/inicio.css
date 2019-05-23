@@ -1,0 +1,26 @@
+.body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-section {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.title-section {
+    width: 90%;
+    align-self: center;
+}
+
+.table-section{
+    width: 90%;
+    border: 1px solid black;
+    height: 500px;
+    display: flex;
+    align-self: center;
+}

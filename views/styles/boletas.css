@@ -1,0 +1,28 @@
+.ticket-section {
+    width: 90%;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.ticket{
+    width: 90%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-self: center;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.ticket-title{
+    align-self: flex-start;
+}
+
+.ticket p {
+    align-self: center;
+}
