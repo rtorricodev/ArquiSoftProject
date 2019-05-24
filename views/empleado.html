@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/empleado.css">
     <link rel="stylesheet" href="styles/inicio.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>Empleado</title>
 </head>
+
 <body>
     <div class='body'>
         <div class='title-section'>
-            <h2 class='title'>Empleado nuevo</h2>
-        </div>
+            <h2 class='title'>Registrar empleado</h2>
+        </div><br>
         <div class="form-section">
             <form action="submit">
-                <label for="nombre">Nombre:<input type="text" name="nombre" placeholder="Nombre"/></label>
-                <label for="apellido">Apellido:<input type="text" name="apellido" placeholder="Apellido"/></label>
-                <label for="celular">Celular:<input type="number" name="celular" placeholder="Celular"/></label>
-                <label for="correo">Correo:<input type="email" name="correo" placeholder="Correo"/></label>
-                <label for="pago">Metodo de pago:<select name="pago">
+                <label for="nombre">Nombre:<input type="text" name="nombre" placeholder="Nombre" class="field"/></label><br>
+                <label for="apellido">Apellido:<input type="text" name="apellido" placeholder="Apellido" class="field"/></label><br>
+                <label for="celular">Celular:<input type="number" name="celular" placeholder="Celular" class="field"/></label><br>
+                <label for="correo">Correo:<input type="email" name="correo" placeholder="Correo" class="field"/></label><br>
+                <label for="pago">Metodo de pago:<select name="pago" class="field">
                         <option>Efectivo</option>
                         <option>Deposito bancario</option>
                         <option>Cheque</option>
-                </select></label>
-                <button type="submit" class='save-button'>Crear</button>
+                </select></label><br>
+                <label for="tipo">Tipo:<select name="tipo" class="field">
+                    <option>Fijo</option>
+                    <option>Por hora</option>
+                    <option>Por comisión</option>
+            </select></label><br>
+                <button type="submit" class='save-button'>Registrar</button>
             </form>
         </div>
     </div>
 </body>
+
 </html>
