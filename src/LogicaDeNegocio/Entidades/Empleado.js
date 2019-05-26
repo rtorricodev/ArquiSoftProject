@@ -1,4 +1,4 @@
-export default class Empleado {
+ class Empleado {
     constructor(nombre, apellido, celularPrincipal, correoPrincipal, calculadoraSalario, calculadoraFechaDePago, metodoDePago, notificacion) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -22,3 +22,5 @@ export default class Empleado {
         return this.notificacion.notificar();
     }
 }
+
+module.exports = Empleado;
