@@ -5,10 +5,11 @@ app.use(bodyParser.json());
 
 
 let ModeloDePeticionEmpleado = require('../../ModelosDePeticion/ModeloDePetecionEmpleado.js');
-
+let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
 
 class Express{
-    constructor(){
+    constructor( repositorio){
+        this.repositorio = repositorio;
     }
 
     async definirRutas(){
@@ -18,9 +19,10 @@ class Express{
             let modeloPeticion = new ModeloDePeticionEmpleado()
             let modeloEmpleado = modeloPeticion.modelarEmpleado(req);
 
-            console.log(modeloEmpleado);
-
             //treatment
+            let crearEmpleado = new CrearEmpleado();
+            crearEmpleado.guardarEmpleado(modeloEmpleado,this.repositorio);
+
 
             //output
             res.send('Crear empleado');

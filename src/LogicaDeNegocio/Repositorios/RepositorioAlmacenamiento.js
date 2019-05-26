@@ -1,6 +1,6 @@
 
 
-export default class RepositorioAlmacenamiento {
+class RepositorioAlmacenamiento {
     constructor(bd){
         this.bd = bd;
     }
@@ -25,5 +25,5 @@ export default class RepositorioAlmacenamiento {
     }
 }
 
-
+module.exports = RepositorioAlmacenamiento;
 
