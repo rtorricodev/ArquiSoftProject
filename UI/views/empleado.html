@@ -1,0 +1,24 @@
+<div class='body'>
+    <div class='title-section'>
+        <h2 class='title'>Registrar empleado</h2>
+    </div><br>
+    <div class="form-section">
+        <form action="submit">
+            <label for="nombre">Nombre:<input type="text" name="nombre" placeholder="Nombre" class="field" ng-model="empleado.nombre"/></label><br>
+            <label for="apellido">Apellido:<input type="text" name="apellido" placeholder="Apellido" class="field" ng-model="empleado.apellido"/></label><br>
+            <label for="celular">Celular:<input type="number" name="celular" placeholder="Celular" class="field" ng-model="empleado.celularPrincipal"/></label><br>
+            <label for="correo">Correo:<input type="email" name="correo" placeholder="Correo" class="field" ng-model="empleado.correoPrincipal"/></label><br>
+            <label for="pago">Metodo de pago:<select name="pago" class="field" ng-model="empleado.metodoPago">
+                    <option>Efectivo</option>
+                    <option>Deposito bancario</option>
+                    <option>Cheque</option>
+            </select></label><br>
+            <label for="tipo">Tipo:<select name="tipo" class="field" ng-model="empleado.tipo">
+                <option>Fijo</option>
+                <option>Por hora</option>
+                <option>Por comisión</option>
+        </select></label><br>
+            <button type="submit" class='save-button' ng-click="guardarEmpleado()">Registrar</button>
+        </form>
+    </div>
+</div>

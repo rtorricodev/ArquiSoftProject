@@ -1,5 +1,3 @@
-
-
 class RepositorioAlmacenamiento {
     constructor(bd){
         this.bd = bd;
