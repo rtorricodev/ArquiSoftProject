@@ -6,6 +6,7 @@ app.use(bodyParser.json());
 
 let ModeloDePeticionEmpleado = require('../../ModelosDePeticion/ModeloDePetecionEmpleado.js');
 let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
+let ModeloPresentadorEmpleado = require('../../ModeloDePresentacion/ModeloPresentacionEmpleado.js')
 
 class Express{
     constructor( repositorio){
@@ -25,7 +26,9 @@ class Express{
 
 
             //output
-            res.send('Crear empleado');
+            let modeloPresentador = new ModeloPresentadorEmpleado();
+            modeloPresentador.retornarRespuestaDeExito(res);
+        
         });
     }
     
