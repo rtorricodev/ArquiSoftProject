@@ -2,7 +2,8 @@ const express = require("express");
 var app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-
+const cors = require('cors');
+app.use(cors());
 
 let ModeloDePeticionEmpleado = require('../../ModelosDePeticion/ModeloDePetecionEmpleado.js');
 let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
@@ -14,6 +15,7 @@ class Express{
     }
 
     async definirRutas(){
+        app.options('*',cors());
         app.post("/crear-empleado", (req,res)=>{
             //input
 
