@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 
-export default class Mongo{
+class Mongo{
     constructor(enlace,nombreDeBD){
         this.enlace = enlace;
         this.nombreBD = nombreDeBD;
@@ -34,6 +34,8 @@ export default class Mongo{
     }
 
 }
+
+module.exports = Mongo;
 
 
 
