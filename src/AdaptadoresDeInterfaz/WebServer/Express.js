@@ -9,7 +9,7 @@ let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js')
 let ModeloPresentadorEmpleado = require('../../ModeloDePresentacion/ModeloPresentacionEmpleado.js')
 
 class Express{
-    constructor( repositorio){
+    constructor(repositorio){
         this.repositorio = repositorio;
     }
 
@@ -17,13 +17,12 @@ class Express{
         app.post("/crear-empleado", (req,res)=>{
             //input
 
-            let modeloPeticion = new ModeloDePeticionEmpleado()
+            let modeloPeticion = new ModeloDePeticionEmpleado();
             let modeloEmpleado = modeloPeticion.modelarEmpleado(req);
 
             //treatment
             let crearEmpleado = new CrearEmpleado();
             crearEmpleado.guardarEmpleado(modeloEmpleado,this.repositorio);
-
 
             //output
             let modeloPresentador = new ModeloPresentadorEmpleado();
