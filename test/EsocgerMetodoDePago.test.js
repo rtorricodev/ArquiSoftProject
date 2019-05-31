@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import { beforeEach } from 'mocha';
 import pagoPorCheque from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoPorCheque.js';
 import pagoEnEfectivo from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoEnEfectivo.js';

@@ -4,7 +4,7 @@ const assert = require('chai').assert;
 import RepositorioAlmacenamiento from '../src/LogicaDeNegocio/Repositorios/RepositorioAlmacenamiento.js';
 import Mongo from '../src/AdaptadoresDeInterfaz/almacenamiento/Mongo.js';
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import Boleta from '../src/LogicaDeNegocio/Entidades/Boleta.js';
 
 import CalculadoraFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraFija.js';

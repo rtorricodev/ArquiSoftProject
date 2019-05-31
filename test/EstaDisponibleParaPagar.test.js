@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import Fecha from '../src/LogicaDeNegocio/Entidades/Fecha.js';
 import HojaDeTiempo from '../src/LogicaDeNegocio/Entidades/RegistroDeTiempo.js';
 import HojaDeVenta from '../src/LogicaDeNegocio/Entidades/RegistroDeVenta.js';
