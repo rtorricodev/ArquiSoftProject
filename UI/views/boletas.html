@@ -5,22 +5,10 @@
     <div class='title-section'>
         <h2 class='title'>Boletas</h2>
     </div>
-    <div class='ticket-section'>
+    <div class='ticket-section' ng-repeat="boleta in listaBoletas">
         <div class='ticket'>
-            <div class="ticket-title"> Boleta de pago</div><br>
-            <label>Nombre: Carlos Bodoque</label><br>
-            <label>Monto: 1000Bs</label><br>
-            <div class='date'>23/05/2019</div>
-        </div>
-        <div class='ticket'>
-            <div class="ticket-title"> Boleta de pago</div><br>
-            <label>Nombre: Carlos Bodoque</label><br>
-            <label>Monto: 1000Bs</label><br>
-            <div class='date'>23/05/2019</div>
-        </div>
-        <div class='ticket'>
-            <div class="ticket-title"> Boleta de pago</div><br>
-            <label>Nombre: Carlos Bodoque</label><br>
+            <div class="ticket-title"> {{boleta.empleado.nombre}}</div><br>
+            <label>Nombre: {{boleta.empleado.apellido}}</label><br>
             <label>Monto: 1000Bs</label><br>
             <div class='date'>23/05/2019</div>
         </div>

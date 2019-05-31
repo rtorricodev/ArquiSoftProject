@@ -21,7 +21,10 @@
                 <option>Por hora</option>
                 <option>Por comisión</option>
         </select></label><br>
-            <button type="submit" class='save-button' ng-click="guardarEmpleado()">Registrar</button>
+        <label for="monto" ng-if="empleado.tipo == 'Fijo'">Monto:<input type="text" name="monto" placeholder="Monto" class="field"/></label>
+        <label for="tarifa" ng-if="empleado.tipo == 'Por hora'">Tarifa:<input type="text" name="tarifa" placeholder="Tarifa" class="field"/></label>
+        <label for="comision" ng-if="empleado.tipo == 'Por comisión'">Comision:<input type="text" name="comision" placeholder="Comision" class="field"/></label><br>
+        <button type="submit" class='save-button' ng-click="guardarEmpleado()">Registrar</button>
         </form>
     </div>
 </div>
