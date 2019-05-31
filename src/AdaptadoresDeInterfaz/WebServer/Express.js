@@ -5,9 +5,8 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-let ModeloDePeticionEmpleado = require('../../ModelosDePeticion/ModeloDePetecionEmpleado.js');
-let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
-let ModeloPresentadorEmpleado = require('../../ModeloDePresentacion/ModeloPresentacionEmpleado.js')
+
+let ControlladorEmpleados = require('../../Controladores/ControladorEmpleados.js');
 
 class Express{
     constructor(repositorio){
@@ -16,20 +15,10 @@ class Express{
 
     async definirRutas(){
         app.options('*',cors());
-        app.post("/crear-empleado", (req,res)=>{
-            //input
 
-            let modeloPeticion = new ModeloDePeticionEmpleado();
-            let modeloEmpleado = modeloPeticion.modelarEmpleado(req);
-
-            //treatment
-            let crearEmpleado = new CrearEmpleado();
-            crearEmpleado.guardarEmpleado(modeloEmpleado,this.repositorio);
-
-            //output
-            let modeloPresentador = new ModeloPresentadorEmpleado();
-            modeloPresentador.retornarRespuestaDeExito(res);
-        
+        app.post("/crear-empleado", (peticion, respuesta)=>{
+            let controlador = new ControlladorEmpleados(this.repositorio);
+            controlador.registrarEmpleado(peticion, respuesta);
         });
     }
     
