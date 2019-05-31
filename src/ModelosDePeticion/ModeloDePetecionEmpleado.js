@@ -1,4 +1,4 @@
-var Empleado = require('../LogicaDeNegocio/Entidades/Empleado.js');
+var Empleado = require('../LogicaDeNegocio/Entidades/Empleado/Empleado.js');
 
 class ModeloDePeticionEmpleado { 
     constructor(){

@@ -1,17 +1,17 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import Fecha from '../src/LogicaDeNegocio/Entidades/Fecha.js';
 import HojaDeTiempo from '../src/LogicaDeNegocio/Entidades/RegistroDeTiempo.js';
 import HojaDeVenta from '../src/LogicaDeNegocio/Entidades/RegistroDeVenta.js';
 
-import CalculadoraFechaPorComision from '../src/LogicaDeNegocio/CasosDeUso/CalcularFechaPago/CalculadoraFechaPorComision.js';
-import CalculadoraFechaPorHoras from '../src/LogicaDeNegocio/CasosDeUso/CalcularFechaPago/CalculadoraFechaPorHoras.js';
+import CalculadoraFechaPorComision from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaPorComision.js';
+import CalculadoraFechaPorHoras from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaPorHoras.js';
 
-import CalculadoraFechaFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularFechaPago/CalculadoraFechaFija.js';
-import CalculadoraPorComision from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraPorComision.js';
-import CalculadoraPorHoras from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraPorHoras.js';
-import CalculadoraFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaFija.js';
+import CalculadoraPorComision from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraSalario/CalculadoraPorComision.js';
+import CalculadoraPorHoras from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraSalario/CalculadoraPorHoras.js';
+import CalculadoraFija from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraSalario/CalculadoraFija.js';
 
 describe('Funciones basicas de la calculadora de fecha de pago', () => {
 
