@@ -62,7 +62,11 @@ th {
     height: 45px;
 }
 
-.icon:hover {
+.icon:hover {  
+    color: red;
+}
+
+.icon {
     color: #3498DB;
 }
 

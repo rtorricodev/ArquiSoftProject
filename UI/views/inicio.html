@@ -15,37 +15,24 @@
                 <th>Celular</th>
                 <th>Opciones</th>
             </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
+            <tr ng-repeat="empleado in listaEmpleados">
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.correoPrincipal}}</td>
+                <td>{{empleado.celularPrincipal}}</td>
                 <td>
-                    <i class="far fa-edit icon"></i>
                     <i class="far fa-trash-alt icon"></i>
                 </td>
             </tr>
             <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
-            </tr>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.correoPrincipal}}</td>
+                    <td>{{empleado.celularPrincipal}}</td>
+                    <td>
+                        <i class="far fa-trash-alt icon"></i>
+                    </td>
+                </tr>
         </table>
     </div>
 </div>

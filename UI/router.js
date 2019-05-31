@@ -1,10 +1,12 @@
 const URL = 'http://localhost:3000';
 const CREAR_EMPLEADO = '/crear-empleado';
+const LISTAR_EMPLEADOS = '/listar-empleados';
 
 APP.config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl : './UI/views/inicio.html'
+        templateUrl : './UI/views/inicio.html',
+        controller : 'controladorInicio'
     })
     .when('/crear-empleado', {
         templateUrl : './UI/views/empleado.html',
