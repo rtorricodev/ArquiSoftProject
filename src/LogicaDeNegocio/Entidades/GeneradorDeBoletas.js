@@ -1,4 +1,4 @@
-import Boleta from '../../Entidades/Boleta.js';
+import Boleta from '../Entidades/Boleta.js';
 
 
 

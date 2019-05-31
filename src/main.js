@@ -9,8 +9,8 @@ var mongoConected = mongo.establecerConexion();
 
 mongoConected.then( () =>{
     var repositorioAlmacenamiento = new RepositorioAlmacenamiento(mongo);
-    let express = new Express(repositorioAlmacenamiento);
     let repositorioServidor = new RepositorioServidor(express);
+    let express = new Express(repositorioAlmacenamiento);
     repositorioServidor.inicializarServidor(3000);
 })
 
