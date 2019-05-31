@@ -11,6 +11,9 @@
     width: 90%;
     align-self: center;
     display: flex;
+}
+
+.center{
     justify-content: space-evenly;
 }
 
@@ -67,4 +70,9 @@ th {
     border-color: #3498DB;
     font-size: 20.5px;
     color: #3498DB;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
 }
