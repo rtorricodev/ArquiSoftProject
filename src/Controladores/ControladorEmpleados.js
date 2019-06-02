@@ -1,5 +1,5 @@
 let ModeloDePeticionEmpleado = require('../ModelosDePeticion/ModeloDePetecionEmpleado.js');
-let CrearEmpleado = require('../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
+let EmpleadoInteractor = require('../LogicaDeNegocio/CasosDeUso/EmpleadoInteractor.js');
 let ModeloPresentadorEmpleado = require('../ModeloDePresentacion/ModeloPresentacionEmpleado.js')
 
 class ControladorEmpleados{
@@ -8,15 +8,16 @@ class ControladorEmpleados{
     }
 
     registrarEmpleado(peticion, respuseta){
-        let modeloPeticion = new ModeloDePeticionEmpleado();
-        let modeloEmpleado = modeloPeticion.modelarEmpleado(peticion);
-
-        let crearEmpleado = new CrearEmpleado();
-        crearEmpleado.guardarEmpleado(modeloEmpleado,this.repositorio);
-   
-        let modeloPresentador = new ModeloPresentadorEmpleado();
-        modeloPresentador.retornarRespuestaDeExito(respuseta);
+        let empleado = ModeloDePeticionEmpleado.modelarEmpleado(peticion);
+        EmpleadoInteractor.guardarEmpleado(empleado,this.repositorio);
+        ModeloPresentadorEmpleado.retornarRespuestaDeExito(respuseta);
     }
+
+    async listarEmpleados(peticion, respuesta){
+        let listaEmpleados =  await EmpleadoInteractor.listarEmpleados(this.repositorio);
+        ModeloPresentadorEmpleado.retornarLista(listaEmpleados,respuesta);
+    }
+
 }
 
 module.exports = ControladorEmpleados;

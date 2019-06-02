@@ -6,20 +6,28 @@ const cors = require('cors');
 app.use(cors());
 
 
-let ControlladorEmpleados = require('../../Controladores/ControladorEmpleados.js');
+let ControladorEmpleados = require('../../Controladores/ControladorEmpleados.js');
 
 class Express{
     constructor(repositorio){
         this.repositorio = repositorio;
     }
 
-    async definirRutas(){
+    async definirRutasEmpleado(){
         app.options('*',cors());
 
-        app.post("/crear-empleado", (peticion, respuesta)=>{
-            let controlador = new ControlladorEmpleados(this.repositorio);
+        let controlador = new ControladorEmpleados(this.repositorio);
+
+        app.get("/empleados",(peticion, respuesta)=>{
+            controlador.listarEmpleados(peticion,respuesta);
+        })
+
+        app.post("/empleado/crear", (peticion, respuesta)=>{
             controlador.registrarEmpleado(peticion, respuesta);
         });
+
+        
+
     }
     
     
@@ -30,7 +38,7 @@ class Express{
     }
 
     inicializarServidor(puerto){
-        this.definirRutas();
+        this.definirRutasEmpleado();
         this.escucharPuerto(puerto);
     }
 }
