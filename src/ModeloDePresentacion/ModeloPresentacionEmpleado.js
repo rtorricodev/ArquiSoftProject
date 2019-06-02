@@ -3,10 +3,14 @@ class ModeloPresentacionEmpleado {
 
     }
 
-    retornarRespuestaDeExito(res) {
-        return res.status(200).send({
+    static retornarRespuestaDeExito(respuesta) {
+        return respuesta.status(200).send({
             success: 'true'
         });
+    }
+
+    static retornarLista(lista, respuesta) {
+        respuesta.send(lista);
     }
 }
 

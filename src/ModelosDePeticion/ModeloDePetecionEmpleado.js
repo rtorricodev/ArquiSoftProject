@@ -4,7 +4,7 @@ class ModeloDePeticionEmpleado {
     constructor(){
     }
 
-    modelarEmpleado(peticion){
+    static modelarEmpleado(peticion){
         let cuerpoDePeticion = peticion.body;
       
         var empleado = new Empleado(

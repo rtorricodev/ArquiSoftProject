@@ -20,10 +20,10 @@ class Mongo{
         return coleccion.insertOne(objeto);
     }
 
-    obtenerListaDe(nombreDeConjunto){
-        let coleccion =  this.baseDeDatos.collection(nombreDeConjunto);
-        let cursor = coleccion.find({});
-        let arreglo = cursor.toArray();
+    async obtenerListaDe(nombreDeConjunto){
+        let coleccion = await this.baseDeDatos.collection(nombreDeConjunto);
+        let cursor = await coleccion.find({});
+        let arreglo = await cursor.toArray();
         return arreglo;
     }
 

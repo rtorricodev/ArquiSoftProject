@@ -14,8 +14,9 @@ class RepositorioAlmacenamiento {
         });
     }
 
-    obtenerListaDe(nombreDeConjunto){
-        return this.bd.obtenerListaDe(nombreDeConjunto);
+    async obtenerListaDe(nombreDeConjunto){
+        let lista = await this.bd.obtenerListaDe(nombreDeConjunto);
+        return lista;
     }
 
     eliminarObjeto(objeto,nombreDeConjunto){
