@@ -62,9 +62,9 @@ describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => 
 
     it('Deberia retornar la lista de boletas',  () => {
       
-            repositorioAlmacenamiento.obtenerListaDe('Boletas').then(lista=>{
-                console.log(lista);
-            });
+        repositorioAlmacenamiento.obtenerListaDe('Boletas').then(lista=>{
+            console.log(lista);
+        });
       
     })
 
