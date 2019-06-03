@@ -1,4 +1,4 @@
-export default class CalculadoraPorHoras {
+class CalculadoraPorHoras {
     constructor(registroDeTiempo){
         this.registroDeTiempo = registroDeTiempo;
     }
@@ -15,5 +15,5 @@ export default class CalculadoraPorHoras {
         return (this.registroDeTiempo.tarifa * 1.5) *
         this.registroDeTiempo.retornarHorasExtrasTotalesCalculadas();
     }
-
 }
+module.exports = CalculadoraPorHoras;

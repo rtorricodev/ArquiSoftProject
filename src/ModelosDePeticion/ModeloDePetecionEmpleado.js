@@ -1,4 +1,4 @@
-var Empleado = require('../LogicaDeNegocio/Entidades/Empleado/Empleado.js');
+var FabricaEmpleado = require('../LogicaDeNegocio/Fabricas/FabricaEmpleado.js');
 
 class ModeloDePeticionEmpleado { 
     constructor(){
@@ -6,13 +6,12 @@ class ModeloDePeticionEmpleado {
 
     static modelarEmpleado(peticion){
         let cuerpoDePeticion = peticion.body;
+
+        let fabricaEmpleado = new FabricaEmpleado();
+
+        let empleado = fabricaEmpleado.crearEmpleado(cuerpoDePeticion);
       
-        var empleado = new Empleado(
-            cuerpoDePeticion.nombre,
-            cuerpoDePeticion.apellido, 
-            cuerpoDePeticion.celularPrincipal,
-            cuerpoDePeticion.correoPrincipal
-        );
+
         return empleado;
 
     }

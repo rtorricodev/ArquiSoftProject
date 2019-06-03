@@ -7,10 +7,10 @@ class ControladorEmpleados{
         this.repositorio = repositorio;
     }
 
-    registrarEmpleado(peticion, respuseta){
+    registrarEmpleado(peticion, respuesta){
         let empleado = ModeloDePeticionEmpleado.modelarEmpleado(peticion);
         EmpleadoInteractor.guardarEmpleado(empleado,this.repositorio);
-        ModeloPresentador.retornarRespuestaDeExito(respuseta);
+        ModeloPresentador.retornarRespuestaDeExito(respuesta);
     }
 
     async listarEmpleados(peticion, respuesta){

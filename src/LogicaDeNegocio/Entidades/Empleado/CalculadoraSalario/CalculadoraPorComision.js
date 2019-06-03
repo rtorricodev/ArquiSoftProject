@@ -1,4 +1,4 @@
-export default class CalculadoraPorComision {
+class CalculadoraPorComision {
     constructor(salarioFijo, RegistroDeVenta){
         this.salarioFijo = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
@@ -10,3 +10,5 @@ export default class CalculadoraPorComision {
                this.RegistroDeVenta.ventasTotales;
     }
 }
+
+module.exports = CalculadoraPorComision;
