@@ -1,6 +1,7 @@
 const URL = 'http://localhost:3000';
-const CREAR_EMPLEADO = '/crear-empleado';
-const LISTAR_EMPLEADOS = '/listar-empleados';
+const CREAR_EMPLEADO = '/empleado/crear';
+const LISTAR_EMPLEADOS = '/empleados';
+const LISTAR_BOLETAS = '/boletas';
 
 APP.config(function ($routeProvider) {
     $routeProvider
@@ -13,6 +14,7 @@ APP.config(function ($routeProvider) {
         controller : 'controladorEmpleado'
     })
     .when('/generar-boletas', {
-        templateUrl : './UI/views/boletas.html'
+        templateUrl : './UI/views/boletas.html',
+        controller : 'controladorBoleta'
     })
 });
