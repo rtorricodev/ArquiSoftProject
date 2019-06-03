@@ -3,5 +3,3 @@ class Boleta {
         this.empleado = empleado;
     }
 }
-
-module.exports = Boleta;

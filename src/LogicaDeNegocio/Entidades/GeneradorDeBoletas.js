@@ -1,8 +1,6 @@
-import Boleta from '../Entidades/Boleta.js';
+let Boleta = require('../Entidades/Boleta.js');
 
-
-
-export default class GeneradorDeBoletas {
+class GeneradorDeBoletas {
     constructor(listaDeEmpleados) {
         this.listaDeEmpleados =  listaDeEmpleados;
     }
@@ -17,7 +15,8 @@ export default class GeneradorDeBoletas {
         });
         return boletasGeneradas;
     }
-
 }
+
+module.exports = GeneradorDeBoletas;
 
 

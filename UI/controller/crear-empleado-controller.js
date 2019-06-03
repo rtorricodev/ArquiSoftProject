@@ -9,10 +9,10 @@ APP.controller('controladorEmpleado', function ($scope, $http) {
         };
         $http(req)
         .then((res)=>{
-            //window.location.replace('./UI/views/inicio.html');
+            window.location.replace('/');
         })
         .catch((err)=>{
-            //alert('No Funciona!');
+            alert('No Funciona!');
         });
     }  
 });
