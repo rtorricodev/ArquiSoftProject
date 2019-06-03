@@ -12,7 +12,7 @@ let CalculadoraPorComision = require('../Entidades/Empleado/CalculadoraSalario/C
 let RegistroDeVenta = require('../Entidades/RegistroDeVenta.js');
 let CalculadoraFechaPorComision = require('../Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaPorComision.js');
 
-class FábricaEmpleado {
+class FabricaEmpleado {
 
     constructor(){    
     }
@@ -46,4 +46,4 @@ class FábricaEmpleado {
 
 }
 
-module.exports = EmpleadoFijo;
+module.exports = FabricaEmpleado;
