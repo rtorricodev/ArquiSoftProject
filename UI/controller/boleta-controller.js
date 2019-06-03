@@ -8,6 +8,6 @@ APP.controller('controladorBoleta', function ($scope, $http) {
         scope.listaBoletas = res.data;
     })
     .catch((err)=>{
-        console.log(err);
+        alert('No Funciona!: ' + err);
     });
 });
