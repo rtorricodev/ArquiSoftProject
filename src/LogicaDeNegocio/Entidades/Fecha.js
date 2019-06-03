@@ -1,4 +1,4 @@
-export default class Fecha {
+class Fecha {
 
     constructor(dia, mes, anho) {
         this.dia = dia;
@@ -48,3 +48,5 @@ export default class Fecha {
     }
 
 }
+
+module.exports = Fecha;

@@ -5,31 +5,34 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-let ModeloDePeticionEmpleado = require('../../ModelosDePeticion/ModeloDePetecionEmpleado.js');
-let CrearEmpleado = require('../../LogicaDeNegocio/CasosDeUso/crearEmpleado.js');
-let ModeloPresentadorEmpleado = require('../../ModeloDePresentacion/ModeloPresentacionEmpleado.js')
+
+let ControladorEmpleados = require('../../Controladores/ControladorEmpleados.js');
+let ControladorBoleta = require('../../Controladores/ControladorBoleta.js');
 
 class Express{
     constructor(repositorio){
         this.repositorio = repositorio;
     }
 
-    async definirRutas(){
-        app.options('*',cors());
-        app.post("/crear-empleado", (req,res)=>{
-            //input
+    async definirRutasEmpleado(){
+        let controladorEmpleado = new ControladorEmpleados(this.repositorio);
+    
+        app.get("/empleados",(peticion, respuesta)=>{
+            controladorEmpleado.listarEmpleados(peticion,respuesta);
+        })
 
-            let modeloPeticion = new ModeloDePeticionEmpleado();
-            let modeloEmpleado = modeloPeticion.modelarEmpleado(req);
-
-            //treatment
-            let crearEmpleado = new CrearEmpleado();
-            crearEmpleado.guardarEmpleado(modeloEmpleado,this.repositorio);
-
-            //output
-            let modeloPresentador = new ModeloPresentadorEmpleado();
-            modeloPresentador.retornarRespuestaDeExito(res);
         
+        app.post("/empleado/crear", (peticion, respuesta)=>{
+            controladorEmpleado.registrarEmpleado(peticion, respuesta);
+        });
+    }
+
+    async definirRutasDeBoleto(){
+
+        let controladorBoleta = new ControladorBoleta(this.repositorio);
+        
+        app.get("/boletas",(peticion,respuesta)=>{
+            controladorBoleta.listarBoletas(peticion,respuesta);
         });
     }
     
@@ -41,7 +44,9 @@ class Express{
     }
 
     inicializarServidor(puerto){
-        this.definirRutas();
+        app.options('*',cors());
+        this.definirRutasEmpleado();
+        this.definirRutasDeBoleto();
         this.escucharPuerto(puerto);
     }
 }

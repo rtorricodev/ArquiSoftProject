@@ -4,11 +4,11 @@ const assert = require('chai').assert;
 import RepositorioAlmacenamiento from '../src/LogicaDeNegocio/Repositorios/RepositorioAlmacenamiento.js';
 import Mongo from '../src/AdaptadoresDeInterfaz/almacenamiento/Mongo.js';
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import Boleta from '../src/LogicaDeNegocio/Entidades/Boleta.js';
 
-import CalculadoraFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularSalario/CalculadoraFija.js';
-import CalculadoraFechaFija from '../src/LogicaDeNegocio/CasosDeUso/CalcularFechaPago/CalculadoraFechaFija.js';
+import CalculadoraFija from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraSalario/CalculadoraFija.js';
+import CalculadoraFechaFija from '../src/LogicaDeNegocio/Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaFija.js';
 
 describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => {
 
@@ -46,7 +46,6 @@ describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => 
             repositorioAlmacenamiento.obtenerListaDe('Empleados');
         })
     })
-        
 
     it('Deberia elminar un Empleado', ()=>{
         mongoConected.then(()=>{
@@ -61,13 +60,13 @@ describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => 
         })
     })
 
-    it('Deberia retornar la lista de boletas', () => {
-        mongoConected.then( () => {
-            repositorioAlmacenamiento.obtenerListaDe('Boletas');
-
-        })
+    it('Deberia retornar la lista de boletas',  () => {
+      
+        repositorioAlmacenamiento.obtenerListaDe('Boletas').then(lista=>{
+            console.log(lista);
+        });
+      
     })
-
 
     it('Deberia elminar una Boleta', ()=>{
         mongoConected.then(()=>{

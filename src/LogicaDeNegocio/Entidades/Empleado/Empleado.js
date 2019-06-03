@@ -6,7 +6,7 @@
         this.correoPrincipal = correoPrincipal;
         this.calculadoraSalario = calculadoraSalario;
         this.calculadoraFechaDePago = calculadoraFechaDePago;
-        this.metodoDePago = metodoDePago;
+        this.metodoDePago = metodoDePago;  
         this.notificacion = notificacion;
     }
 

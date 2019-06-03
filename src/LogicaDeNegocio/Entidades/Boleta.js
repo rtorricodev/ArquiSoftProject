@@ -1,5 +1,7 @@
-export default class Boleta {
+class Boleta {
     constructor(empleado) {
         this.empleado = empleado;
     }
 }
+
+module.exports = Boleta;

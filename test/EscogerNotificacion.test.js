@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
 
-import { Notificacion } from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/Notificacion.js';
-import { Correo } from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/Tipos/Correo.js';
-import { WhatsApp } from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/Tipos/WhatsApp';
-import { Facebook } from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/Tipos/Facebook';
-import { SMS } from '../src/LogicaDeNegocio/CasosDeUso/RecibirNotificaciones/Tipos/SMS.js';
+import { Notificacion } from '../src/LogicaDeNegocio/Entidades/Notificaciones/Notificacion.js';
+import { Correo } from '../src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/Correo.js';
+import { WhatsApp } from '../src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/WhatsApp.js';
+import { Facebook } from '../src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/Facebook.js';
+import { SMS } from '../src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/SMS.js';
 
 
 let notificacion;
