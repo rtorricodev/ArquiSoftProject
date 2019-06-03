@@ -12,7 +12,7 @@ APP.controller('controladorEmpleado', function ($scope, $http) {
             window.location.replace('/');
         })
         .catch((err)=>{
-            alert('No Funciona!');
+            alert('No Funciona!: ' + err);
         });
     }  
 });

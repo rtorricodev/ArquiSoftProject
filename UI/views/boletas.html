@@ -5,6 +5,12 @@
     <div class='title-section'>
         <h2 class='title'>Boletas</h2>
     </div>
+    <div>
+        <label for="dia">Dia:<input type="text" name="fecha.dia" placeholder="dia" class="field"/></label>
+        <label for="mes">Mes:<input type="text" name="fecha.mes" placeholder="mes" class="field"/></label>
+        <label for="anho">Año:<input type="text" name="fecha.anho" placeholder="año" class="field"/></label>
+        <button class="button" ng-click="generarBoletas()">Generar boletas</button>
+    </div>
     <div class='ticket-section' ng-repeat="boleta in listaBoletas">
         <div class='ticket'>
             <div class="ticket-title"> {{boleta.empleado.nombre}}</div><br>
