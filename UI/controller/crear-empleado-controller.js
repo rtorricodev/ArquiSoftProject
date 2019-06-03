@@ -9,6 +9,7 @@ APP.controller('controladorEmpleado', function ($scope, $http) {
         };
         $http(req)
         .then((res)=>{
+            console.log(empleado);
             window.location.replace('/');
         })
         .catch((err)=>{
