@@ -7,6 +7,8 @@ class GeneradorDeBoletas {
 
     generarBoletas(fecha) {
         let boletasGeneradas = [];
+
+
         this.listaDeEmpleados.forEach(empleado => {
             if (empleado.verificarSiEstaDisponibleParaPagar(fecha)) {
                 let boleta = new Boleta(empleado);

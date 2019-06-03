@@ -8,7 +8,6 @@ class ModeloPeticionBoleta{
 
     static modelarFecha(peticion){
 
-
         let fecha = new Fecha(
             peticion.query.dia,
             peticion.query.mes,

@@ -1,9 +1,10 @@
 class CalculadoraPorHoras {
-    constructor(registroDeTiempo){
+    constructor(registroDeTiempo, cuotaSindicato){
         this.registroDeTiempo = registroDeTiempo;
+        this.cuotaSindicato = cuotaSindicato;
     }
     calcularMonto() {
-        return  this.obtenerCalculoDeSalarioHorasNormal() + this.obtenerCalculoDeSalarioHorasExtras();                
+        return  this.obtenerCalculoDeSalarioHorasNormal() + this.obtenerCalculoDeSalarioHorasExtras() - this.cuotaSindicato;                
     }
 
     obtenerCalculoDeSalarioHorasNormal(){

@@ -6,9 +6,12 @@ class BoletaInteractor{
     }
 
     static async generarBoletas(fecha, repositorio){
+        //TODO: arreglar
         let listaEmpleados = await repositorio.obtenerListaDe('Empleados');
+
         let generadorBoletas = new GeneradorBoletas(listaEmpleados);
         let listaBoletas = generadorBoletas.generarBoletas(fecha);
+   
         return listaBoletas;
     }
 }

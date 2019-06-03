@@ -21,7 +21,7 @@ class FabricaEmpleado {
 
     crearEmpleado(datos){
 
-        console.log(datos);
+    
         switch(datos.tipo){
             case 'Fijo':
                 return this.fabricarEmpleadoFijo(datos.nombre,datos.apellido,datos.celularPrincipal,

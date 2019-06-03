@@ -1,16 +1,17 @@
 class CalculadoraFija{
-    constructor(salarioFijo, fechaInicioDeTrabajo){
+    constructor(salarioFijo, fechaInicioDeTrabajo, cuotaSindicato){
         this.salarioFijo = salarioFijo;
         this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
         this.recibioSuPrimerPago = false;
+        this.cuotaSindicato = cuotaSindicato;
     }
 
     calcularMonto(){
         if(this.noRecibioSuPrimerPago()){
             this.recibioSuPrimerPago = true;
-            return this.obtenerSalarioProrrateado();
+            return this.obtenerSalarioProrrateado() - cuotaSindicato;
         }
-        return this.salarioFijo;
+        return this.salarioFijo - cuotaSindicato;
     }
 
     noRecibioSuPrimerPago(){
