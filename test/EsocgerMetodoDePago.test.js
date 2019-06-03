@@ -1,10 +1,10 @@
 const expect = require('chai').expect;
 
-import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado.js';
+import Empleado from '../src/LogicaDeNegocio/Entidades/Empleado/Empleado.js';
 import { beforeEach } from 'mocha';
-import pagoPorCheque from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoPorCheque.js';
-import pagoEnEfectivo from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoEnEfectivo.js';
-import pagoPorDepositoBancario from '../src/LogicaDeNegocio/CasosDeUso/EscogerFormaDePago/pagoPorDepositoBancario.js';
+import PagoPorCheque from '../src/LogicaDeNegocio/Entidades/Empleado/FormaDePago/PagoPorCheque.js';
+import PagoEnEfectivo from '../src/LogicaDeNegocio/Entidades/Empleado/FormaDePago/PagoEnEfectivo.js';
+import PagoPorDepositoBancario from '../src/LogicaDeNegocio/Entidades/Empleado/FormaDePago/PagoPorDepositoBancario.js';
 
 describe('Funciones basicas del metodo de pago', () => {
 
@@ -16,9 +16,9 @@ describe('Funciones basicas del metodo de pago', () => {
     let bancario;
     
     beforeEach(() => {
-        cheque = new pagoPorCheque();
-        efectivo = new pagoEnEfectivo();
-        bancario = new pagoPorDepositoBancario();
+        cheque = new PagoPorCheque();
+        efectivo = new PagoEnEfectivo();
+        bancario = new PagoPorDepositoBancario();
         empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', cheque);
         empleado2 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', efectivo);
         empleado3 = new Empleado('Carlos', 'Bodoque', 77777777, 'carlos@gmail.com', 'fijo', 'fechafijo', bancario);

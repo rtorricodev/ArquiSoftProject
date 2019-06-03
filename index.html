@@ -5,15 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Generador de Boletas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- styles -->
     <link rel="stylesheet" href="/UI/styles/empleado.css">
+    <link rel="stylesheet" href="/UI/styles/boletas.css">
     <link rel="stylesheet" href="/UI/styles/inicio.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <!-- angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="/UI/scripts/main.js" defer></script>
+    <!-- modules -->
+    <script src="/UI//app.module.js" defer></script>
+    <!-- router -->
+    <script src="/UI/router.js" defer></script>
+    <!-- controllers -->
+    <script src="/UI/controller/inicio-controller.js" defer></script>
+    <script src="/UI/controller/crear-empleado-controller.js" defer></script>
+    <script src="/UI/controller/boleta-controller.js" defer></script>
+    <!-- models -->
+    <script src="/UI/models/Empleado.js" defer></script>
+    <script src="/UI/models/Boleta.js" defer></script>
+    <script src="/UI/models/Fecha.js" defer></script>
 </head>
 <body>
-    <body ng-app="angularApp">
+    <body ng-app="app">
         <div ng-view >
 
         </div>

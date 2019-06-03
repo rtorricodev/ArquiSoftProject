@@ -1,7 +1,7 @@
 <div class='body'>
-    <div class="button-section">
-        <button class="button">Registrar empleado</button>
-        <button class="button">Generar boletas</button>
+    <div class="button-section center">
+        <a href = "#!crear-empleado"><button class="button">Registrar empleado</button></a>
+        <a href = "#!generar-boletas"><button class="button">Generar boletas</button></a>
     </div>
     <div class='title-section'>
         <h2 class='title'>Lista de empleados</h2>
@@ -15,36 +15,14 @@
                 <th>Celular</th>
                 <th>Opciones</th>
             </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
+            <tr ng-repeat="empleado in listaEmpleados">
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.correoPrincipal}}</td>
+                <td>{{empleado.celularPrincipal}}</td>
                 <td>
-                    <i class="far fa-edit icon"></i>
                     <i class="far fa-trash-alt icon"></i>
                 </td>
-            </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Juan Carlos</td>
-                <td>Bodoque</td>
-                <td>jbodoque@31minutos.cl</td>
-                <td>77777777</td>
-                <td></td>
             </tr>
         </table>
     </div>
