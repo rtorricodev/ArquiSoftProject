@@ -1,4 +1,4 @@
-export default class CalculadoraFechaPorComision {
+class CalculadoraFechaPorComision {
     constructor(){
         this.estaDisponible = false;
         this.contadorDeViernes = 0;
@@ -28,3 +28,5 @@ export default class CalculadoraFechaPorComision {
     }
 
 }
+
+module.exports = CalculadoraFechaPorComision;

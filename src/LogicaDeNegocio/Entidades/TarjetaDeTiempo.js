@@ -1,4 +1,4 @@
-export default class TarjetaDeTiempo{
+class TarjetaDeTiempo{
     constructor(horaDeEntrada, horaDeSalida){
         this.horaDeEntrada = horaDeEntrada;
         this.horaDeSalida  = horaDeSalida;
@@ -8,3 +8,5 @@ export default class TarjetaDeTiempo{
         return Math.abs(this.horaDeSalida.getHours() - this.horaDeEntrada.getHours());
     }
 }
+
+module.exports = TarjetaDeTiempo;

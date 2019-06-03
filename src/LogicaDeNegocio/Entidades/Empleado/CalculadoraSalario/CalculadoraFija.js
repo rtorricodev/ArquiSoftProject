@@ -1,4 +1,4 @@
-export default class CalculadoraFija{
+class CalculadoraFija{
     constructor(salarioFijo, fechaInicioDeTrabajo){
         this.salarioFijo = salarioFijo;
         this.fechaInicioDeTrabajo = fechaInicioDeTrabajo;
@@ -25,3 +25,5 @@ export default class CalculadoraFija{
         return (this.fechaInicioDeTrabajo.obtenerUltimoDiaMes() - this.fechaInicioDeTrabajo.dia + 1 );
     }
 }
+
+module.exports = CalculadoraFija;

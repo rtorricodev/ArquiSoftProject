@@ -12,13 +12,33 @@ let CalculadoraPorComision = require('../Entidades/Empleado/CalculadoraSalario/C
 let RegistroDeVenta = require('../Entidades/RegistroDeVenta.js');
 let CalculadoraFechaPorComision = require('../Entidades/Empleado/CalculadoraFechaPago/CalculadoraFechaPorComision.js');
 
+let Fecha = require('../Entidades/Fecha.js');
+
 class FabricaEmpleado {
 
     constructor(){    
     }
 
-    fabricarEmpleadoFijo(nombre,apellido,celularPrincipal,correoPrincipal,salarioFijo, fechaInicioDeTrabajo){
-        let calculadoraSalarioFijo = new CalculadoraFija(salarioFijo,fechaInicioDeTrabajo);
+    crearEmpleado(datos){
+
+        console.log(datos);
+        switch(datos.tipo){
+            case 'Fijo':
+                return this.fabricarEmpleadoFijo(datos.nombre,datos.apellido,datos.celularPrincipal,
+                    datos.correoPrincipal,datos.monto,datos.dia,datos.mes,datos.anho);
+            case 'Por hora':
+                return this.fabricarEmpleadoPorHora(datos.nombre,datos.apellido,datos.celularPrincipal,
+                    datos.correoPrincipal,datos.tarifa,datos.horasManuales,datos.horasATrabajar);
+            case 'Por comisión':
+                return this.fabricarEmpleadoPorComision(datos.nombre,datos.apellido,datos.celularPrincipal,
+                    datos.correoPrincipal,datos.monto,datos.comision,datos.ventasTotales)
+
+        }
+    }
+
+    fabricarEmpleadoFijo(nombre,apellido,celularPrincipal,correoPrincipal,salarioFijo, dia, mes, anho){
+        let fechaInicioTrabajo = new Fecha(dia,mes,anho);
+        let calculadoraSalarioFijo = new CalculadoraFija(salarioFijo,fechaInicioTrabajo);
         let calculadoraFechaPagoFijo = new CalculadoraFechaFija();
 
         return new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraSalarioFijo,calculadoraFechaPagoFijo)

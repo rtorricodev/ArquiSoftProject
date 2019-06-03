@@ -1,4 +1,4 @@
-export default class RegistroDeTiempo {
+class RegistroDeTiempo {
     constructor(tarifa, horasTotalesTrabajadasManuales, horasATrabajarPorDia) {
         this.tarifa                         = tarifa;
         this.horasTotalesTrabajadasManuales = horasTotalesTrabajadasManuales;
@@ -37,5 +37,6 @@ export default class RegistroDeTiempo {
         return horasExtrasTotalesCalculadas;
     }
 
-
 }
+
+module.exports = RegistroDeTiempo;
