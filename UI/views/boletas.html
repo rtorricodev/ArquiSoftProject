@@ -6,9 +6,9 @@
         <h2 class='title'>Boletas</h2>
     </div>
     <div>
-        <label for="dia">Dia:<input type="text" name="fecha.dia" placeholder="dia" class="field"/></label>
-        <label for="mes">Mes:<input type="text" name="fecha.mes" placeholder="mes" class="field"/></label>
-        <label for="anho">Año:<input type="text" name="fecha.anho" placeholder="año" class="field"/></label>
+        <label for="dia">Dia:<input type="text" name="dia" ng-model="fecha.dia" placeholder="dia" class="field"/></label>
+        <label for="mes">Mes:<input type="text" name="mes" ng-model="fecha.mes" placeholder="mes" class="field"/></label>
+        <label for="anho">Año:<input type="text" name="anho" ng-model="fecha.anho" placeholder="año" class="field"/></label>
         <button class="button" ng-click="generarBoletas()">Generar boletas</button>
     </div>
     <div class='ticket-section' ng-repeat="boleta in listaBoletas">
