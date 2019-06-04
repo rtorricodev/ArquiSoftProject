@@ -28,3 +28,39 @@
     position: absolute;
     right: 2%;
 }
+
+.date-section {
+    width: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    display: flex;
+}
+
+.button2 {
+    border: 1px solid #3498DB;
+    color: #2a2e31;
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 5px;
+    height: 35px;
+    outline: none;
+}
+
+.button2:hover {
+    background-color: #3498DB;
+    color: white;
+}
+
+.generate-button-section {
+    width: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
