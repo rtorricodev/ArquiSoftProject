@@ -16,9 +16,10 @@
 
     <div class='ticket-section' ng-repeat="boleta in listadeBoletas">
         <div class='ticket'>
-            <div class="ticket-title"> {{boleta.empleado.nombre}}</div><br>
-            <label>Apellido: {{boleta.empleado.apellido}}</label><br>
+            <div class="ticket-title">Boleta de pago</div><br>
+            <label>Nombre: {{boleta.empleado.nombre}} {{boleta.empleado.apellido}}</label><br>
             <label>Monto: {{boleta.salario}}Bs</label><br>
+            <label>Tipo de empleado: {{boleta.empleado.tipo}}</label><br>
             <div class='date'>{{fecha.dia}} / {{fecha.mes}} / {{fecha.anho}}</div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 .ticket-section {
     width: 90%;
-    height: 500px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-self: center;
