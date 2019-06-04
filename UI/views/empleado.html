@@ -15,7 +15,6 @@
             <p class="error" ng-show="myForm.celular.$invalid && myForm.celular.$touched">Se requiere celular (8 numeros)</p><br>
             <label for="correo">Correo:<input type="email" name="correo" placeholder="Ejm: jbodoque@31minutos.cl" class="field" ng-model="empleado.correoPrincipal" ng-required='true'/></label>
             <p class="error" ng-show="myForm.correo.$invalid && myForm.correo.$touched">Se requiere correo (Ejm: nombre@algo.com)</p><br>
-            <label for="montoSindicato">Monto sindicato:<input type="number" name="montoSindicato" placeholder="Ejm: 450" class="field" ng-model="empleado.montoSindicato"/></label>
 
             <label for="tipo">Tipo:<select name="tipo" class="field" ng-model="empleado.tipo" ng-required='true'>
                 <option>Fijo</option>
