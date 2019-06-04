@@ -1,22 +1,26 @@
 <div class='body'>
     <div class="button-section">
-            <a href = "#!/"><button class="button">Volver</button></a>
+        <a href="#!/"><button class="button">Volver</button></a>
+    </div>
+    <div class="date-section">
+        <label for="dia">Dia:<input type="number" name="dia" ng-model="fecha.dia" placeholder="dia" class="field"/></label>
+        <label for="mes">Mes:<input type="number" name="mes" ng-model="fecha.mes" placeholder="mes" class="field"/></label>
+        <label for="anho">Año:<input type="number" name="anho" ng-model="fecha.anho" placeholder="año" class="field"/></label>
+    </div> <br>
+    <div class='generate-button-section'>
+        <button class="button2" ng-click="generarBoletas()">Generar boletas</button>
     </div>
     <div class='title-section'>
         <h2 class='title'>Boletas</h2>
     </div>
-    <div>
-        <label for="dia">Dia:<input type="text" name="fecha.dia" placeholder="dia" class="field"/></label>
-        <label for="mes">Mes:<input type="text" name="fecha.mes" placeholder="mes" class="field"/></label>
-        <label for="anho">Año:<input type="text" name="fecha.anho" placeholder="año" class="field"/></label>
-        <button class="button" ng-click="generarBoletas()">Generar boletas</button>
-    </div>
-    <div class='ticket-section' ng-repeat="boleta in listaBoletas">
+
+    <div class='ticket-section' ng-repeat="boleta in listadeBoletas">
         <div class='ticket'>
-            <div class="ticket-title"> {{boleta.empleado.nombre}}</div><br>
-            <label>Nombre: {{boleta.empleado.apellido}}</label><br>
-            <label>Monto: 1000Bs</label><br>
-            <div class='date'>23/05/2019</div>
+            <div class="ticket-title">Boleta de pago</div><br>
+            <label>Nombre: {{boleta.empleado.nombre}} {{boleta.empleado.apellido}}</label><br>
+            <label>Monto: {{boleta.salario}}Bs</label><br>
+            <label>Tipo de empleado: {{boleta.empleado.tipo}}</label><br>
+            <div class='date'>{{fecha.dia}} / {{fecha.mes}} / {{fecha.anho}}</div>
         </div>
     </div>
 </div>

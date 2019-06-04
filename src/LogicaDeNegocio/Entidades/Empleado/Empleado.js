@@ -8,6 +8,7 @@
         this.calculadoraFechaDePago = calculadoraFechaDePago;
         this.metodoDePago = metodoDePago;  
         this.notificacion = notificacion;
+        this.tipo = '';
     }
 
     verificarSiEstaDisponibleParaPagar(fecha) {

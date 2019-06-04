@@ -50,3 +50,8 @@ input {
 .save-button:hover {
     font-size: 21px;
 }
+
+.error {
+    color: rgb(209, 57, 57);
+    font-size: 15px;
+}

@@ -1,14 +1,13 @@
 class CalculadoraPorComision {
-    constructor(salarioFijo, RegistroDeVenta, cuotaSindicato){
+    constructor(salarioFijo, RegistroDeVenta){
         this.salarioFijo = salarioFijo;
         this.RegistroDeVenta = RegistroDeVenta;
-        this.cuotaSindicato = cuotaSindicato;
     }
     
     calcularMonto() {
         return this.salarioFijo + 
                this.RegistroDeVenta.comision * 
-               this.RegistroDeVenta.ventasTotales - this.cuotaSindicato;
+               this.RegistroDeVenta.ventasTotales;
     }
 }
 

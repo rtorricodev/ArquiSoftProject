@@ -31,7 +31,7 @@ class Express{
 
         let controladorBoleta = new ControladorBoleta(this.repositorio);
         
-        app.get("/boletas",(peticion,respuesta)=>{
+        app.post("/boletas",(peticion,respuesta)=>{
             controladorBoleta.listarBoletas(peticion,respuesta);
         });
     }

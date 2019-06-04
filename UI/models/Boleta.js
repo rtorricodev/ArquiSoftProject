@@ -1,5 +1,6 @@
 class Boleta {
-    constructor(empleado) {
+    constructor(empleado, salario) {
         this.empleado = empleado;
+        this.salario = salario;
     }
 }

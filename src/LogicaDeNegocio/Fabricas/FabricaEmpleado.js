@@ -19,9 +19,33 @@ class FabricaEmpleado {
     constructor(){    
     }
 
-    crearEmpleado(datos){
+    desglosar(empleado){
+        var data = {};
+        data.nombre = empleado.nombre;
+        data.apellido = empleado.apellido;
+        data.celularPrincipal = empleado.celularPrincipal;
+        data.correoPrincipal = empleado.correoPrincipal;
+        data.tipo = empleado.tipo;
+        if(data.tipo == 'Fijo'){
+            data.monto = empleado.calculadoraSalario.salarioFijo;
+            data.dia = empleado.calculadoraSalario.fechaInicioDeTrabajo.dia;
+            data.mes = empleado.calculadoraSalario.fechaInicioDeTrabajo.mes;
+            data.anho = empleado.calculadoraSalario.fechaInicioDeTrabajo.anho;
+        }
+        if(data.tipo == 'Por hora'){
+            data.tarifa = empleado.calculadoraSalario.registroDeTiempo.tarifa;
+            data.horasManuales = empleado.calculadoraSalario.registroDeTiempo.horasTotalesTrabajadasManuales;
+            data.horasATrabajar = empleado.calculadoraSalario.registroDeTiempo.horasATrabajarPorDia;
+        }
+        if(data.tipo == 'Por comisión'){
+            data.monto = empleado.calculadoraSalario.salarioFijo;
+            data.comision = empleado.calculadoraSalario.RegistroDeVenta.comision;
+            data.ventasTotales = empleado.calculadoraSalario.RegistroDeVenta.ventasTotales;
+        }
+        return data;
+    }
 
-    
+    crearEmpleado(datos) {
         switch(datos.tipo){
             case 'Fijo':
                 return this.fabricarEmpleadoFijo(datos.nombre,datos.apellido,datos.celularPrincipal,
@@ -40,22 +64,27 @@ class FabricaEmpleado {
         let fechaInicioTrabajo = new Fecha(dia,mes,anho);
         let calculadoraSalarioFijo = new CalculadoraFija(salarioFijo,fechaInicioTrabajo);
         let calculadoraFechaPagoFijo = new CalculadoraFechaFija();
-
-        return new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraSalarioFijo,calculadoraFechaPagoFijo)
+        let empleado = new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraSalarioFijo,calculadoraFechaPagoFijo);
+        empleado.tipo = 'Fijo';
+        return empleado;
     }
 
     fabricarEmpleadoPorHora(nombre,apellido,celularPrincipal,correoPrincipal,tarifa,horasManuales,horasATrabajar){
         let registroDeTiempo = new RegistroDeTiempo(tarifa,horasManuales,horasATrabajar);
         let calculadoraSalarioPorHora = new CalculadoraPorHoras(registroDeTiempo);
         let calculadoraFechaPorHora = new CalculadoraFechaPorHora();
-        return new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraSalarioPorHora,calculadoraFechaPorHora);
+        let empleado = new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraSalarioPorHora,calculadoraFechaPorHora);
+        empleado.tipo = 'Por hora';
+        return empleado;
     }
 
     fabricarEmpleadoPorComision(nombre,apellido,celularPrincipal,correoPrincipal,salarioFijo,comision,ventasTotales){
         let registroDeVenta = new RegistroDeVenta(comision,ventasTotales);
         let calculadoraPorComision = new CalculadoraPorComision(salarioFijo,registroDeVenta);
         let calculadoraFechaPorComision = new CalculadoraFechaPorComision();
-        return new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraPorComision,calculadoraFechaPorComision);
+        let empleado = new Empleado(nombre,apellido,celularPrincipal,correoPrincipal,calculadoraPorComision,calculadoraFechaPorComision);
+        empleado.tipo = 'Por comisión';
+        return empleado;
     }
 
 

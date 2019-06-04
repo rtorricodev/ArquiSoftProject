@@ -8,9 +8,9 @@ class ControladorBoleta{
         this.repositorio = repositorio;
     }   
 
-    listarBoletas(peticion,respuesta){
+    async listarBoletas(peticion,respuesta){
         let fecha = ModeloDePeticionBoleta.modelarFecha(peticion);
-        let listaDeBoletas = BoletaInteractor.generarBoletas(fecha,this.repositorio);
+        let listaDeBoletas = await BoletaInteractor.generarBoletas(fecha,this.repositorio);
         ModeloPresentardor.retornarLista(listaDeBoletas,respuesta);
     }
 }
