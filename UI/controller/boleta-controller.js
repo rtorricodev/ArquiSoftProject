@@ -10,6 +10,12 @@ APP.controller('controladorBoleta', function ($scope, $http) {
         $http(req)
         .then((res)=>{
             $scope.listadeBoletas = res.data;
+            if($scope.listadeBoletas.length === 0)
+            {
+                $scope.boletasNoDisponibles = true;
+            }else{
+                $scope.boletasNoDisponibles = false;
+            }
         })
         .catch((err)=>{
             alert('No Funciona!: ' + err);

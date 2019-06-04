@@ -58,9 +58,11 @@
     color: white;
 }
 
-.generate-button-section {
-    width: 80%;
-    align-self: center;
+form {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+}
+
+.error{
+    text-align: center;
 }
