@@ -8,12 +8,6 @@
     "nyc": {
         "all": true,
         "include": [
-            "src/AdaptadoresDeInterfaz/almacenamiento/*.js",
-            "src/AdaptadoresDeInterfaz/WebServer/*.js",
-
-            "src/Controladores/*.js",
-
-            "src/LogicaDeNegocio/CasosDeUso/*.js",
             "src/LogicaDeNegocio/Entidades/*.js",
             
             "src/LogicaDeNegocio/Entidades/Empleado/*.js",
@@ -24,13 +18,7 @@
             "src/LogicaDeNegocio/Entidades/Notificaciones/*.js",
             "src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/*.js",
 
-            "src/LogicaDeNegocio/Fabricas/*.js",
-            "src/LogicaDeNegocio/Repositorios/*.js",
-
-            "src/ModeloDePresentacion/*.js",
-            "src/ModeloDePeticion/*.js",
-
-            "src/*.js"
+            "src/LogicaDeNegocio/Repositorios/*.js"
         ]
     },
     "scripts": {
