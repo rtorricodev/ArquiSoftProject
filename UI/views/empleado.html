@@ -18,17 +18,17 @@
                 <option>Por comisión</option>
         </select></label><br>
 
-        <label for="monto" ng-if="empleado.tipo == 'Fijo' || empleado.tipo == 'Por comisión'">Monto:<input type="text" name="monto" ng-model="empleado.monto" placeholder="Monto" class="field"/></label>
-        <label for="dia" ng-if="empleado.tipo == 'Fijo'">Dia:<input type="text" name="dia" ng-model="empleado.dia" placeholder="dia" class="field"/></label>
-        <label for="mes" ng-if="empleado.tipo == 'Fijo'">Mes:<input type="text" name="mes" ng-model="empleado.mes" placeholder="mes" class="field"/></label>
-        <label for="anho" ng-if="empleado.tipo == 'Fijo'">Año:<input type="text" name="anho" ng-model="empleado.anho" placeholder="año" class="field"/></label>
+        <label for="monto" ng-if="empleado.tipo == 'Fijo' || empleado.tipo == 'Por comisión'">Monto:<input type="number" name="monto" ng-model="empleado.monto" placeholder="Monto" class="field"/></label>
+        <label for="dia" ng-if="empleado.tipo == 'Fijo'">Dia:<input type="number" name="dia" ng-model="empleado.dia" placeholder="dia" class="field"/></label>
+        <label for="mes" ng-if="empleado.tipo == 'Fijo'">Mes:<input type="number" name="mes" ng-model="empleado.mes" placeholder="mes" class="field"/></label>
+        <label for="anho" ng-if="empleado.tipo == 'Fijo'">Año:<input type="number" name="anho" ng-model="empleado.anho" placeholder="año" class="field"/></label>
 
-        <label for="tarifa" ng-if="empleado.tipo == 'Por hora'">Tarifa:<input type="text" name="tarifa" ng-model="empleado.tarifa" placeholder="Tarifa" class="field"/></label>
-        <label for="horasManuales" ng-if="empleado.tipo == 'Por hora'">Horas manuales:<input type="text" name="horasManuales" ng-model="empleado.horasManuales" placeholder="Horas manuales" class="field"/></label>
-        <label for="horasATrabajar" ng-if="empleado.tipo == 'Por hora'">Horas a trabajar:<input type="text" name="horasATrabajar" ng-model="empleado.horasATrabajar" placeholder="Horas a trabajar" class="field"/></label>
+        <label for="tarifa" ng-if="empleado.tipo == 'Por hora'">Tarifa:<input type="number" name="tarifa" ng-model="empleado.tarifa" placeholder="Tarifa" class="field"/></label>
+        <label for="horasManuales" ng-if="empleado.tipo == 'Por hora'">Horas manuales:<input type="number" name="horasManuales" ng-model="empleado.horasManuales" placeholder="Horas manuales" class="field"/></label>
+        <label for="horasATrabajar" ng-if="empleado.tipo == 'Por hora'">Horas a trabajar:<input type="number" name="horasATrabajar" ng-model="empleado.horasATrabajar" placeholder="Horas a trabajar" class="field"/></label>
 
-        <label for="comision" ng-if="empleado.tipo == 'Por comisión'">Comision:<input type="text" name="comision" ng-model="empleado.comision" placeholder="Comision" class="field"/></label>
-        <label for="ventasTotales" ng-if="empleado.tipo == 'Por comisión'">Ventas totales:<input type="text" name="ventasTotales" ng-model="empleado.ventasTotales" placeholder="ventas totales" class="field"/></label>
+        <label for="comision" ng-if="empleado.tipo == 'Por comisión'">Comision:<input type="number" name="comision" ng-model="empleado.comision" placeholder="Comision" class="field"/></label>
+        <label for="ventasTotales" ng-if="empleado.tipo == 'Por comisión'">Ventas totales:<input type="number" name="ventasTotales" ng-model="empleado.ventasTotales" placeholder="ventas totales" class="field"/></label>
 
         <br>
         <button class='save-button' ng-click="guardarEmpleado()">Registrar</button>

@@ -1,14 +1,16 @@
 APP.controller('controladorBoleta', function ($scope, $http) {
     $scope.fecha = new Fecha();
     $scope.generarBoletas = ()=>{
-        let fecha = $scope.fecha;
+        let date = $scope.fecha;
         let req = {
-            method : 'GET',
-            url: URL + LISTAR_BOLETAS + '?dia=' + fecha.dia + '&mes=' + fecha.mes + '&anho=' + fecha.anho
+            method : 'POST',
+            url: URL + LISTAR_BOLETAS,
+            data : JSON.stringify(date)
         };
         $http(req)
         .then((res)=>{
-            $scope.listaBoletas = res.data;
+            $scope.listadeBoletas = res.data;
+            let lista = $scope.listadeBoletas;
         })
         .catch((err)=>{
             alert('No Funciona!: ' + err);

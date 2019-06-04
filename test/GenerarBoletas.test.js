@@ -27,7 +27,7 @@ describe('Deberia generar boletas para cada empleado', () => {
         let generadorDeBoletas = new GeneradorDeBoletas(listaDeEmpleados);
  
     
-        expect(generadorDeBoletas.generarBoletas(fecha)[0]).equal('Carlos monto: 2000');
+        expect(generadorDeBoletas.generarBoletas(fecha)[0].empleado.nombre).equal('Carlos');
     
     })
 
