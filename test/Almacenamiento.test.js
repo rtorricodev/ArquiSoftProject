@@ -30,7 +30,7 @@ describe('Funciones basicas de la repositorioAlmacenamiento de empleado', () => 
         let CalculadoraDeFechafija = new CalculadoraFechaFija();
 
         empleado = new Empleado('Carlos', 'Bodoque', 77777777, 'carlosBodoque@esMiEmail.com',caliculadoraFija,CalculadoraDeFechafija);
-        boletaDeMario = new Boleta(empleado);
+        //boletaDeMario = new Boleta(empleado);
     })
     
 

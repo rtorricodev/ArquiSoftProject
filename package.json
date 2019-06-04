@@ -8,13 +8,29 @@
     "nyc": {
         "all": true,
         "include": [
-            "src/Clases/*.js",
-            "src/Clases/CalculadoraDeFechaPago/*.js",
-            "src/Clases/CalculadoraDeSalario/*.js",
-            "src/Clases/Fecha/*.js",
-            "src/Clases/GestorDeNotificaciones/*.js",
-            "src/Clases/GestorDePagos/*.js",
-            "src/Persistencia/*.js"
+            "src/AdaptadoresDeInterfaz/almacenamiento/*.js",
+            "src/AdaptadoresDeInterfaz/WebServer/*.js",
+
+            "src/Controladores/*.js",
+
+            "src/LogicaDeNegocio/CasosDeUso/*.js",
+            "src/LogicaDeNegocio/Entidades/*.js",
+            
+            "src/LogicaDeNegocio/Entidades/Empleado/*.js",
+            "src/LogicaDeNegocio/Entidades/Empleado/CalculadoraFechaPago/*.js",
+            "src/LogicaDeNegocio/Entidades/Empleado/CalculadoraSalario/*.js",
+            "src/LogicaDeNegocio/Entidades/Empleado/FormaDePago/*.js",
+
+            "src/LogicaDeNegocio/Entidades/Notificaciones/*.js",
+            "src/LogicaDeNegocio/Entidades/Notificaciones/Tipos/*.js",
+
+            "src/LogicaDeNegocio/Fabricas/*.js",
+            "src/LogicaDeNegocio/Repositorios/*.js",
+
+            "src/ModeloDePresentacion/*.js",
+            "src/ModeloDePeticion/*.js",
+
+            "src/*.js"
         ]
     },
     "scripts": {
