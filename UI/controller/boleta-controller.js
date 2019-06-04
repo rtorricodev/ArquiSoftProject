@@ -10,7 +10,6 @@ APP.controller('controladorBoleta', function ($scope, $http) {
         $http(req)
         .then((res)=>{
             $scope.listadeBoletas = res.data;
-            let lista = $scope.listadeBoletas;
         })
         .catch((err)=>{
             alert('No Funciona!: ' + err);

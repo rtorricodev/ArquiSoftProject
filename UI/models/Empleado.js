@@ -4,6 +4,7 @@ class Empleado{
         this.apellido = apellido;
         this.celularPrincipal = celularPrincipal;
         this.correoPrincipal = correoPrincipal;
+        this.montoSindicato = 0;
 
         this.tipo = tipo;
 
